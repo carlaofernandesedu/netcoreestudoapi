@@ -1,0 +1,33 @@
+dotnet --version 
+dotnet new --list
+Para saber tratar solutions e projetos 
+http://www.macoratti.net/17/09/netcore_prosol1.htm
+
+Para saber instalar net core 
+sudo apt-get install dotnet-runtime-2.1
+sudo apt-get install dotnet-sdk-2.1
+
+sudo apt-get install dotnet-sdk-3.1
+
+dotnet --list-sdks
+dotnet --list-runtimes
+
+Definir versão especifica criar global.json
+dotnet new globaljson --sdk-version 3.0.100
+
+
+Referencias para versionamento
+http://www.matera.com/blog/post/boas-praticas-para-desenvolvimento-de-apis-rest
+https://thiagolima.blog.br/parte-4-versionando-apis-restful-b1dd33c65a9c
+https://www.linkapi.solutions/blog/tecnico/versionamento-apis-restful/
+https://www.yiiframework.com/doc/guide/2.0/pt-br/rest-versioning
+https://www.infoq.com/br/news/2016/07/web-api-versioning/
+https://medium.com/@nelson.souza/net-core-api-versioning-d4f869fb9052
+https://koukia.ca/api-versioning-in-asp-net-core-2-0-1b55970aa29d
+
+Passos 
+https://koukia.ca/api-versioning-in-asp-net-core-2-0-1b55970aa29d
+dotnet add package Microsoft.AspNetCore.Mvc.Versioning -v 2.2.0
+
+TRATATIVAS COM SWAGGER
+https://dejanstojanovic.net/aspnet/2018/november/setting-up-swagger-to-support-versioned-api-endpoints-in-aspnet-core/
