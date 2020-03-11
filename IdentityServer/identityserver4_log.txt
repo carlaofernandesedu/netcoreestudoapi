@@ -1,0 +1,24 @@
+2020-03-11 00:21:11.903 -03:00 [WRN] No XML encryptor configured. Key "ae2e7dd6-6494-47f0-abe8-35d1404d8265" may be persisted to storage in unencrypted form.
+2020-03-11 00:21:11.953 -03:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2020-03-11 00:21:11.976 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2020-03-11 00:21:11.987 -03:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2020-03-11 00:21:11.987 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2020-03-11 00:21:11.987 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2020-03-11 00:21:11.987 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2020-03-11 00:21:11.987 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2020-03-11 00:21:11.987 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2020-03-11 00:21:12.563 -03:00 [DBG] Login Url: /Account/Login
+2020-03-11 00:21:12.567 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-03-11 00:21:12.567 -03:00 [DBG] Logout Url: /Account/Logout
+2020-03-11 00:21:12.569 -03:00 [DBG] ConsentUrl Url: /consent
+2020-03-11 00:21:12.572 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-03-11 00:21:12.572 -03:00 [DBG] Error Url: /home/error
+2020-03-11 00:21:12.573 -03:00 [DBG] Error Id Parameter: errorId
+2020-03-11 00:21:40.366 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2020-03-11 00:21:40.372 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2020-03-11 00:21:40.372 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2020-03-11 00:21:40.376 -03:00 [DBG] Start discovery request
+2020-03-11 00:21:53.241 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2020-03-11 00:21:53.243 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2020-03-11 00:21:53.244 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2020-03-11 00:21:53.248 -03:00 [DBG] Start key discovery request
