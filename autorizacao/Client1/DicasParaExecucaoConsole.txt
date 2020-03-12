@@ -1,0 +1,3 @@
+Para poder enviar comandos para aplicacao console se faz necessarios ajustes no launch Json para integrar com terminal 
+READKEYE READLINE 
+"console": "integratedTerminal",
