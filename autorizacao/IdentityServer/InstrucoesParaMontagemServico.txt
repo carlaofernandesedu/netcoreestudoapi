@@ -1,0 +1,91 @@
+Baixando os templates 
+dotnet new -i IdentityServer4.Templates::2.7.0
+Geracao do projeto
+dotnet new is4empty -n IdentityServer
+
+http://docs.identityserver.io/en/aspnetcore2/quickstarts/1_client_credentials.html
+exemplo de client credentials
+
+http://localhost:5000/.well-known/openid-configuration
+
+At first startup, IdentityServer will create a developer signing key for you, it’s a file called tempkey.rsa. You don’t have to check that file into your source control, it will be re-created if it is not present.
+
+PROTECT API USING CLIENTS CREDENTIALS 
+
+RECURSO DE APIS 
+public static IEnumerable<ApiResource> GetApis()
+{
+            return new ApiResource[] { new ApiResource("api1", "My API") };
+}
+
+RECURSOS DE CLIENTES 
+public static IEnumerable<Client> GetClients()
+        {
+            return new Client[] { 
+                new Client{
+                    ClientId="client",
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+
+                    },
+                    AllowedScopes = {"api1"}
+                }
+            };
+        }
+
+Ao Montar o WebAPI 
+
+    validate the incoming token to make sure it is coming from a trusted issuer
+    validate that the token is valid to be used with this api (aka audience)
+    Metodo ConfigureServices 
+
+            services.AddMvcCore()
+            .AddAuthorization()
+            .AddJsonFormatters();
+
+            services.AddAuthentication("Bearer")
+            .AddJwtBearer("Bearer", options =>
+            {
+                options.Authority = "http://localhost:5000";
+                options.RequireHttpsMetadata = false;
+
+                options.Audience = "api1";
+            });
+
+    Metodo Configure
+    app.UseAuthentication();
+
+    AddAuthentication adds the authentication services to DI and configures "Bearer" as the default scheme. UseAuthentication adds the authentication middleware to the pipeline so authentication will be performed automatically on every call into the host.
+
+    PROTECT API USING PASSWORDS 
+
+    NO identity 
+    public static List<TestUser> GetUsers()
+{
+    return new List<TestUser>
+    {
+        new TestUser
+        {
+            SubjectId = "1",
+            Username = "alice",
+            Password = "password"
+        },
+        new TestUser
+        {
+            SubjectId = "2",
+            Username = "bob",
+            Password = "password"
+        }
+    };
+}
+
+    adds support for the resource owner password grant
+    adds support to user related services typically used by a login UI (we’ll use that in the next quickstart)
+    adds support for a profile service based on the test users (you’ll learn more about that in the next quickstart)
+
+    dotnet new console n- Client1
+
+    dica para suporte assincrono na mais CHARP 7.1 
+    <LangVersion>latest</LangVersion>

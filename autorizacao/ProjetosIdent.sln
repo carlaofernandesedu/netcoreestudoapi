@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer.csproj", "{5C1CF7B0-F284-49EE-87D1-B2BFFA7A85E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{5C1CF7B0-F284-49EE-87D1-B2BFFA7A85E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api1", "..\Api1\Api1.csproj", "{4A718918-5E64-4A7E-8442-F7F300B03623}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api1", "Api1\Api1.csproj", "{4A718918-5E64-4A7E-8442-F7F300B03623}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client1", "Client1\Client1.csproj", "{1F3F0318-F162-439C-A4EC-AFDAC268099C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,5 +46,17 @@ Global
 		{4A718918-5E64-4A7E-8442-F7F300B03623}.Release|x64.Build.0 = Release|Any CPU
 		{4A718918-5E64-4A7E-8442-F7F300B03623}.Release|x86.ActiveCfg = Release|Any CPU
 		{4A718918-5E64-4A7E-8442-F7F300B03623}.Release|x86.Build.0 = Release|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Debug|x64.Build.0 = Debug|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Debug|x86.Build.0 = Debug|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Release|x64.ActiveCfg = Release|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Release|x64.Build.0 = Release|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Release|x86.ActiveCfg = Release|Any CPU
+		{1F3F0318-F162-439C-A4EC-AFDAC268099C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
