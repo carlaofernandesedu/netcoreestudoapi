@@ -5,22 +5,24 @@
 using IdentityServer4.Models;
 using System.Collections.Generic;
 using IdentityServer4.Test;
+using IdentityServer4;
 
 namespace IdentityServer
 {
     public static class Config
     {
-        public static IEnumerable<IdentityResource> GetIdentityResources()
-        {
-            return new IdentityResource[]
-            {
-                new IdentityResources.OpenId()
-            };
-        }
-
         public static IEnumerable<ApiResource> GetApis()
         {
             return new ApiResource[] { new ApiResource("api1", "My API") };
+        }
+
+        public static IEnumerable<IdentityResource> GetIdentityResources()
+        {
+            return new List<IdentityResource>
+            {
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile(),
+            };
         }
 
         public static List<TestUser> GetUsers()
@@ -64,6 +66,24 @@ namespace IdentityServer
                     },
                     AllowedScopes = {"api1"}
                 },
+                new Client
+                {
+                    ClientId = "mvcnetcore",
+                    ClientName = "MVC Net Core Client",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+
+                    // where to redirect to after login
+                    RedirectUris = { "http://localhost:5004/signin-oidc" },
+
+                    // where to redirect to after logout
+                    PostLogoutRedirectUris = { "http://localhost:5004/signout-callback-oidc" },
+
+                    AllowedScopes = new List<string>
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile
+                    }
+                }
             };
         }
     }

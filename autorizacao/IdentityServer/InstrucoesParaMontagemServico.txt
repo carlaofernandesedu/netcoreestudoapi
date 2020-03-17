@@ -89,3 +89,16 @@ Ao Montar o WebAPI
 
     dica para suporte assincrono na mais CHARP 7.1 
     <LangVersion>latest</LangVersion>
+
+
+
+USER AUTHENTICATION openid
+Similar to OAuth 2.0, OpenID Connect also uses the scopes concept. Again, scopes represent something you want to protect and that clients want to access. In contrast to OAuth, scopes in OIDC don’t represent APIs, but identity data like user id, name or email address.
+public static IEnumerable<IdentityResource> GetIdentityResources()
+{
+    return new List<IdentityResource>
+    {
+        new IdentityResources.OpenId(),
+        new IdentityResources.Profile(),
+    };
+}
