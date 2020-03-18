@@ -1,0 +1,17 @@
+﻿Instalado o nuget 
+Criado a classe Startup 
+Criar a classe Startup.Auth 
+
+Install-Package Microsoft.Owin.Security.OAuth
+Install-Package Microsoft.Owin.Host.SystemWeb
+Install-Package Microsoft.Owin.Cors
+Install-Package Microsoft.Owin.Security.Cookies
+install-package Microsoft.Owin.Security.Jwt
+https://docs.microsoft.com/en-us/aspnet/identity/overview/
+https://bitoftech.net/2015/02/16/implement-oauth-json-web-tokens-authentication-in-asp-net-web-api-and-identity-2/
+Microsoft.AspNet.Identity.OWIN
+This package contains functionality that is used to plug in OWIN authentication with ASP.NET Identity in ASP.NET applications. This is used when you add sign in functionality to your application and call into OWIN Cookie Authentication middleware to generate a cookie.
+TALVEZ FIZ ERRADO O PROCEDIMENTOS ESTAVA CONFIGRADO PARA GERAR UM TOKEN NOS MOLDES DO OUATH 2.0 E LER UM TOKEN GERDAO
+
+
+ 
