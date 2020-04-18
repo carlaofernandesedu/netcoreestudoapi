@@ -59,6 +59,8 @@ namespace Client1
                 Console.WriteLine(tokenResponse.Json);
 
             }
+            Console.ReadLine();
+
 
 
         }
