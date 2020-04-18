@@ -20,6 +20,7 @@ namespace Mvc46App.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult OpenId()
         {
             return View();

@@ -18,6 +18,7 @@ namespace Mvc46App
         //public static string PublicClientId { get; private set; }
         public void ConfigureAuth(IAppBuilder app)
         {
+            ConfigureOAuthTokenConsumption(app);
         }
 
         private void ConfigureOAuthTokenGeneration(IAppBuilder app)
@@ -72,7 +73,8 @@ namespace Mvc46App
                 //Scope = "openid email",
                 //UseTokenLifetime = false,
                 SaveTokens = true,
-                SignInAsAuthenticationType = "Cookies"
+                SignInAsAuthenticationType = "Cookies",
+                RequireHttpsMetadata =false
             });
 
             //var issuer = "http://localhost:59822";
