@@ -14,4 +14,29 @@ This package contains functionality that is used to plug in OWIN authentication 
 TALVEZ FIZ ERRADO O PROCEDIMENTOS ESTAVA CONFIGRADO PARA GERAR UM TOKEN NOS MOLDES DO OUATH 2.0 E LER UM TOKEN GERDAO
 
 
+Importante 
+Gerou erros ao conectar ao Identity Server 
+Para poder funcionar precisou dessa configuracao 
+app.UseOpenIdConnectAuthentication(new OpenIdConnectAuthenticationOptions
+            {
+                
+                ClientId = "mvcnetfull",
+                Authority = "http://localhost:5000",
+                RedirectUri = "http://localhost:58922/signin-oidc",
+                ResponseType = "id_token",
+                //Scope = "openid email",
+                //UseTokenLifetime = false,
+                SaveTokens = true,
+                SignInAsAuthenticationType = "Cookies",
+                RequireHttpsMetadata =false
+            });
+
+
+Nessa configuracao especificamente precisei colocar exatamente a URL de Retorno que informei no Identity SErver 
+
+Nessa configuracao para poder definir que se trata de GRANT TYPE IMPLICIT  precisei informar 
+ResponseType = "id_token",
+
+
+
  

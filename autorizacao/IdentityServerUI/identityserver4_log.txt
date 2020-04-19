@@ -491,3 +491,301 @@
 {"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":null,"AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"anonymous","ResponseType":null,"ResponseMode":null,"GrantType":null,"RequestedScopes":"","State":null,"UiLocales":null,"Nonce":null,"AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"client_id":"mvcnetfull","response_type":"code id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=zNlSE_gXG4eJTfGoQTXniGURPGPz4yuhT1_QvhpfHeR8qu2Vhj3aIJMA8byqjDeR9C4LCvARjU3KFzObYRZ3VH_u6KfXtxFnZITueMFUIhmQXvBCPLCQzxuRTHqGPLcAhiXEPjVS8d81ikS5lX8fPQ","response_mode":"form_post","nonce":"637227863547320047.NzFkY2M0ZTItNmUwZi00OTRmLTkxNjQtODMwODEyNGZjYzllMmY2MzRjYzUtMTIwNC00NWZjLTg3YTktZjZlNjIwMTAzMjg3","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
 2020-04-18 02:59:17.174 -03:00 [ERR] Request validation failed
 2020-04-18 02:59:17.176 -03:00 [INF] {"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":null,"AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"anonymous","ResponseType":null,"ResponseMode":null,"GrantType":null,"RequestedScopes":"","State":null,"UiLocales":null,"Nonce":null,"AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"client_id":"mvcnetfull","response_type":"code id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=zNlSE_gXG4eJTfGoQTXniGURPGPz4yuhT1_QvhpfHeR8qu2Vhj3aIJMA8byqjDeR9C4LCvARjU3KFzObYRZ3VH_u6KfXtxFnZITueMFUIhmQXvBCPLCQzxuRTHqGPLcAhiXEPjVS8d81ikS5lX8fPQ","response_mode":"form_post","nonce":"637227863547320047.NzFkY2M0ZTItNmUwZi00OTRmLTkxNjQtODMwODEyNGZjYzllMmY2MzRjYzUtMTIwNC00NWZjLTg3YTktZjZlNjIwMTAzMjg3","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 21:41:59.147 -03:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2020-04-18 21:41:59.537 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2020-04-18 21:41:59.622 -03:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2020-04-18 21:41:59.622 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2020-04-18 21:41:59.623 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2020-04-18 21:41:59.623 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2020-04-18 21:41:59.623 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2020-04-18 21:41:59.624 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2020-04-18 21:42:53.396 -03:00 [DBG] Login Url: /Account/Login
+2020-04-18 21:42:53.440 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-04-18 21:42:53.441 -03:00 [DBG] Logout Url: /Account/Logout
+2020-04-18 21:42:53.441 -03:00 [DBG] ConsentUrl Url: /consent
+2020-04-18 21:42:53.442 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-04-18 21:42:53.442 -03:00 [DBG] Error Url: /home/error
+2020-04-18 21:42:53.485 -03:00 [DBG] Error Id Parameter: errorId
+2020-04-18 21:42:53.748 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2020-04-18 21:42:53.773 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2020-04-18 21:42:53.774 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2020-04-18 21:42:53.790 -03:00 [DBG] Start discovery request
+2020-04-18 21:42:55.107 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2020-04-18 21:42:55.109 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2020-04-18 21:42:55.111 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2020-04-18 21:42:55.117 -03:00 [DBG] Start key discovery request
+2020-04-18 21:42:56.109 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2020-04-18 21:42:56.475 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2020-04-18 21:42:56.477 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2020-04-18 21:42:56.481 -03:00 [DBG] Start authorize request
+2020-04-18 21:42:56.586 -03:00 [DBG] No user present in authorize request
+2020-04-18 21:42:56.648 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 21:42:56.727 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 21:42:56.828 -03:00 [DBG] Checking for PKCE parameters
+2020-04-18 21:42:56.831 -03:00 [DBG] No PKCE used.
+2020-04-18 21:42:56.905 -03:00 [ERR] Invalid grant type for client: hybrid
+{"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":"http://localhost:58922/signin-oidc","AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"anonymous","ResponseType":"code id_token","ResponseMode":"form_post","GrantType":"hybrid","RequestedScopes":"","State":"OpenIdConnect.AuthenticationProperties=XvqwbDkoReMfXNz98Wr8PgJOO2TYxWHmRxGlHKJlhNjoA27cKrddENtTjOpBYncFmz8AxHuLKz-vmpcDR-LzABjjYY5Ad6qEPwM-sijX4_j1z4utsXx6_V01B9veWwJZ59N8fceTRlQmHeoU74LVGXRG4q6leUBsSSgQ7tK7N_7WRSTsA60fZmcChpdlhSxnDRSxk1WD6MOlYS8fYsyBd_cGkUMeyVCwRm7dcAWnhdU","UiLocales":null,"Nonce":null,"AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"client_id":"mvcnetfull","redirect_uri":"http://localhost:58922/signin-oidc","response_type":"code id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=XvqwbDkoReMfXNz98Wr8PgJOO2TYxWHmRxGlHKJlhNjoA27cKrddENtTjOpBYncFmz8AxHuLKz-vmpcDR-LzABjjYY5Ad6qEPwM-sijX4_j1z4utsXx6_V01B9veWwJZ59N8fceTRlQmHeoU74LVGXRG4q6leUBsSSgQ7tK7N_7WRSTsA60fZmcChpdlhSxnDRSxk1WD6MOlYS8fYsyBd_cGkUMeyVCwRm7dcAWnhdU","response_mode":"form_post","nonce":"637228537756662302.MmY3YzM0ZWUtMTAwOS00YzUyLWExNTktYjg1NTkzZjNjMTYyN2RjZjA5MmEtNGU0ZS00ZmQ4LWI0MjMtNjg0Y2FiOWRiYTQ1","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 21:42:57.083 -03:00 [ERR] Request validation failed
+2020-04-18 21:42:57.083 -03:00 [INF] {"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":"http://localhost:58922/signin-oidc","AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"anonymous","ResponseType":"code id_token","ResponseMode":"form_post","GrantType":"hybrid","RequestedScopes":"","State":"OpenIdConnect.AuthenticationProperties=XvqwbDkoReMfXNz98Wr8PgJOO2TYxWHmRxGlHKJlhNjoA27cKrddENtTjOpBYncFmz8AxHuLKz-vmpcDR-LzABjjYY5Ad6qEPwM-sijX4_j1z4utsXx6_V01B9veWwJZ59N8fceTRlQmHeoU74LVGXRG4q6leUBsSSgQ7tK7N_7WRSTsA60fZmcChpdlhSxnDRSxk1WD6MOlYS8fYsyBd_cGkUMeyVCwRm7dcAWnhdU","UiLocales":null,"Nonce":null,"AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"client_id":"mvcnetfull","redirect_uri":"http://localhost:58922/signin-oidc","response_type":"code id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=XvqwbDkoReMfXNz98Wr8PgJOO2TYxWHmRxGlHKJlhNjoA27cKrddENtTjOpBYncFmz8AxHuLKz-vmpcDR-LzABjjYY5Ad6qEPwM-sijX4_j1z4utsXx6_V01B9veWwJZ59N8fceTRlQmHeoU74LVGXRG4q6leUBsSSgQ7tK7N_7WRSTsA60fZmcChpdlhSxnDRSxk1WD6MOlYS8fYsyBd_cGkUMeyVCwRm7dcAWnhdU","response_mode":"form_post","nonce":"637228537756662302.MmY3YzM0ZWUtMTAwOS00YzUyLWExNTktYjg1NTkzZjNjMTYyN2RjZjA5MmEtNGU0ZS00ZmQ4LWI0MjMtNjg0Y2FiOWRiYTQ1","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 21:55:32.985 -03:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2020-04-18 21:55:33.244 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2020-04-18 21:55:33.297 -03:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2020-04-18 21:55:33.298 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2020-04-18 21:55:33.299 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2020-04-18 21:55:33.299 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2020-04-18 21:55:33.299 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2020-04-18 21:55:33.299 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2020-04-18 22:02:30.102 -03:00 [DBG] Login Url: /Account/Login
+2020-04-18 22:02:30.144 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-04-18 22:02:30.155 -03:00 [DBG] Logout Url: /Account/Logout
+2020-04-18 22:02:30.155 -03:00 [DBG] ConsentUrl Url: /consent
+2020-04-18 22:02:30.157 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-04-18 22:02:30.157 -03:00 [DBG] Error Url: /home/error
+2020-04-18 22:02:30.158 -03:00 [DBG] Error Id Parameter: errorId
+2020-04-18 22:02:30.418 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2020-04-18 22:02:30.425 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2020-04-18 22:02:30.426 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2020-04-18 22:02:30.431 -03:00 [DBG] Start discovery request
+2020-04-18 22:02:31.785 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2020-04-18 22:02:31.791 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2020-04-18 22:02:31.792 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2020-04-18 22:02:31.797 -03:00 [DBG] Start key discovery request
+2020-04-18 22:02:32.834 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2020-04-18 22:02:33.065 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2020-04-18 22:02:33.068 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2020-04-18 22:02:33.075 -03:00 [DBG] Start authorize request
+2020-04-18 22:02:33.132 -03:00 [DBG] No user present in authorize request
+2020-04-18 22:02:33.147 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:02:33.182 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:02:33.253 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:02:33.271 -03:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":"http://localhost:58922/signin-oidc","AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"anonymous","ResponseType":"id_token","ResponseMode":"form_post","GrantType":"implicit","RequestedScopes":"openid profile","State":"OpenIdConnect.AuthenticationProperties=FtsMq9tTjgTafwPm2Ql-9Jtdm2GQL6gPIzX8yOzFpIWIbLIBQXNHUPe-UC8Zizz_pEfA_v_c1q0GP5L1tsHlgdvFoECr1_aaosge0Ol_OZDHfYxI7bXLXBROkpJIz1vbTJlfMDq_ku6_QrtOeH_xr4Sc5QFhlnhDV7DYKjkeTW7knieZNQh4uuu-JSz1eZYz4FeJoqKZy1Nm5aXosSaO4xjVP3jI8Y5pbMRFX8mwJgU","UiLocales":null,"Nonce":"637228549526763412.ZTI1OGRlZDctNjQzYi00NTc3LTg1OWMtMTc1ODhlNzlmM2I3NGY4MWJkMjktNWIyZi00ZDhiLTlhMDgtMWQ5ODQ1NDg0NjEy","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"client_id":"mvcnetfull","redirect_uri":"http://localhost:58922/signin-oidc","response_type":"id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=FtsMq9tTjgTafwPm2Ql-9Jtdm2GQL6gPIzX8yOzFpIWIbLIBQXNHUPe-UC8Zizz_pEfA_v_c1q0GP5L1tsHlgdvFoECr1_aaosge0Ol_OZDHfYxI7bXLXBROkpJIz1vbTJlfMDq_ku6_QrtOeH_xr4Sc5QFhlnhDV7DYKjkeTW7knieZNQh4uuu-JSz1eZYz4FeJoqKZy1Nm5aXosSaO4xjVP3jI8Y5pbMRFX8mwJgU","response_mode":"form_post","nonce":"637228549526763412.ZTI1OGRlZDctNjQzYi00NTc3LTg1OWMtMTc1ODhlNzlmM2I3NGY4MWJkMjktNWIyZi00ZDhiLTlhMDgtMWQ5ODQ1NDg0NjEy","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 22:02:33.462 -03:00 [INF] Showing login: User is not authenticated
+2020-04-18 22:02:35.271 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:02:35.272 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:02:35.274 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:02:35.331 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:02:52.088 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-04-18 22:02:53.143 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:02:53.145 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:02:53.150 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:02:53.201 -03:00 [DBG] Augmenting SignInContext
+2020-04-18 22:02:53.204 -03:00 [DBG] Adding idp claim with value: local
+2020-04-18 22:02:53.205 -03:00 [DBG] Adding amr claim with value: pwd
+2020-04-18 22:02:53.329 -03:00 [INF] AuthenticationScheme: idsrv signed in.
+2020-04-18 22:02:53.396 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:02:53.712 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2020-04-18 22:02:53.714 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2020-04-18 22:02:53.717 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2020-04-18 22:02:53.723 -03:00 [DBG] Start authorize callback request
+2020-04-18 22:02:53.818 -03:00 [DBG] User in authorize request: 1
+2020-04-18 22:02:53.819 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:02:53.828 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:02:53.834 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:02:53.840 -03:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":"http://localhost:58922/signin-oidc","AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"1","ResponseType":"id_token","ResponseMode":"form_post","GrantType":"implicit","RequestedScopes":"openid profile","State":"OpenIdConnect.AuthenticationProperties=FtsMq9tTjgTafwPm2Ql-9Jtdm2GQL6gPIzX8yOzFpIWIbLIBQXNHUPe-UC8Zizz_pEfA_v_c1q0GP5L1tsHlgdvFoECr1_aaosge0Ol_OZDHfYxI7bXLXBROkpJIz1vbTJlfMDq_ku6_QrtOeH_xr4Sc5QFhlnhDV7DYKjkeTW7knieZNQh4uuu-JSz1eZYz4FeJoqKZy1Nm5aXosSaO4xjVP3jI8Y5pbMRFX8mwJgU","UiLocales":null,"Nonce":"637228549526763412.ZTI1OGRlZDctNjQzYi00NTc3LTg1OWMtMTc1ODhlNzlmM2I3NGY4MWJkMjktNWIyZi00ZDhiLTlhMDgtMWQ5ODQ1NDg0NjEy","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"dbc94d432ba7823c0352b4bcff33c632","Raw":{"client_id":"mvcnetfull","redirect_uri":"http://localhost:58922/signin-oidc","response_type":"id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=FtsMq9tTjgTafwPm2Ql-9Jtdm2GQL6gPIzX8yOzFpIWIbLIBQXNHUPe-UC8Zizz_pEfA_v_c1q0GP5L1tsHlgdvFoECr1_aaosge0Ol_OZDHfYxI7bXLXBROkpJIz1vbTJlfMDq_ku6_QrtOeH_xr4Sc5QFhlnhDV7DYKjkeTW7knieZNQh4uuu-JSz1eZYz4FeJoqKZy1Nm5aXosSaO4xjVP3jI8Y5pbMRFX8mwJgU","response_mode":"form_post","nonce":"637228549526763412.ZTI1OGRlZDctNjQzYi00NTc3LTg1OWMtMTc1ODhlNzlmM2I3NGY4MWJkMjktNWIyZi00ZDhiLTlhMDgtMWQ5ODQ1NDg0NjEy","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 22:02:53.853 -03:00 [DBG] IsActive called from: AuthorizeEndpoint
+2020-04-18 22:02:53.894 -03:00 [DBG] user_consent grant with value: mvcnetfull|1 not found in store.
+2020-04-18 22:02:53.895 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2020-04-18 22:02:53.897 -03:00 [INF] Showing consent: User has not yet consented
+2020-04-18 22:02:53.986 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:02:53.986 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:02:53.992 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:02:53.994 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:03:01.895 -03:00 [DBG] CORS request made for path: /consent from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-04-18 22:03:01.970 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:03:01.971 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:03:01.976 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:03:02.164 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:03:02.174 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2020-04-18 22:03:02.177 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2020-04-18 22:03:02.182 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2020-04-18 22:03:02.186 -03:00 [DBG] Start authorize callback request
+2020-04-18 22:03:02.236 -03:00 [DBG] User in authorize request: 1
+2020-04-18 22:03:02.238 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:03:02.243 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:03:02.251 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:03:02.256 -03:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":"http://localhost:58922/signin-oidc","AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"1","ResponseType":"id_token","ResponseMode":"form_post","GrantType":"implicit","RequestedScopes":"openid profile","State":"OpenIdConnect.AuthenticationProperties=FtsMq9tTjgTafwPm2Ql-9Jtdm2GQL6gPIzX8yOzFpIWIbLIBQXNHUPe-UC8Zizz_pEfA_v_c1q0GP5L1tsHlgdvFoECr1_aaosge0Ol_OZDHfYxI7bXLXBROkpJIz1vbTJlfMDq_ku6_QrtOeH_xr4Sc5QFhlnhDV7DYKjkeTW7knieZNQh4uuu-JSz1eZYz4FeJoqKZy1Nm5aXosSaO4xjVP3jI8Y5pbMRFX8mwJgU","UiLocales":null,"Nonce":"637228549526763412.ZTI1OGRlZDctNjQzYi00NTc3LTg1OWMtMTc1ODhlNzlmM2I3NGY4MWJkMjktNWIyZi00ZDhiLTlhMDgtMWQ5ODQ1NDg0NjEy","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"dbc94d432ba7823c0352b4bcff33c632","Raw":{"client_id":"mvcnetfull","redirect_uri":"http://localhost:58922/signin-oidc","response_type":"id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=FtsMq9tTjgTafwPm2Ql-9Jtdm2GQL6gPIzX8yOzFpIWIbLIBQXNHUPe-UC8Zizz_pEfA_v_c1q0GP5L1tsHlgdvFoECr1_aaosge0Ol_OZDHfYxI7bXLXBROkpJIz1vbTJlfMDq_ku6_QrtOeH_xr4Sc5QFhlnhDV7DYKjkeTW7knieZNQh4uuu-JSz1eZYz4FeJoqKZy1Nm5aXosSaO4xjVP3jI8Y5pbMRFX8mwJgU","response_mode":"form_post","nonce":"637228549526763412.ZTI1OGRlZDctNjQzYi00NTc3LTg1OWMtMTc1ODhlNzlmM2I3NGY4MWJkMjktNWIyZi00ZDhiLTlhMDgtMWQ5ODQ1NDg0NjEy","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 22:03:02.276 -03:00 [DBG] IsActive called from: AuthorizeEndpoint
+2020-04-18 22:03:02.279 -03:00 [DBG] user_consent grant with value: mvcnetfull|1 not found in store.
+2020-04-18 22:03:02.280 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2020-04-18 22:03:02.331 -03:00 [INF] User consented to scopes: ["openid","profile"]
+2020-04-18 22:03:02.336 -03:00 [DBG] User indicated to remember consent for scopes: ["openid","profile"]
+2020-04-18 22:03:02.342 -03:00 [DBG] Client allows remembering consent, and consent given. Updating consent store for subject: 1
+2020-04-18 22:03:02.441 -03:00 [DBG] Creating Implicit Flow response.
+2020-04-18 22:03:02.461 -03:00 [DBG] Getting claims for identity token for subject: 1 and client: mvcnetfull
+2020-04-18 22:03:02.469 -03:00 [DBG] Get profile called for subject 1 from client MVC Net Full Client with claim types ["name","family_name","given_name","middle_name","nickname","preferred_username","profile","picture","website","gender","birthdate","zoneinfo","locale","updated_at"] via ClaimsProviderIdentityToken
+2020-04-18 22:03:02.472 -03:00 [DBG] Issued claims: []
+2020-04-18 22:03:03.586 -03:00 [DBG] Authorize endpoint response
+{"SubjectId":"1","ClientId":"mvcnetfull","RedirectUri":"http://localhost:58922/signin-oidc","State":"OpenIdConnect.AuthenticationProperties=FtsMq9tTjgTafwPm2Ql-9Jtdm2GQL6gPIzX8yOzFpIWIbLIBQXNHUPe-UC8Zizz_pEfA_v_c1q0GP5L1tsHlgdvFoECr1_aaosge0Ol_OZDHfYxI7bXLXBROkpJIz1vbTJlfMDq_ku6_QrtOeH_xr4Sc5QFhlnhDV7DYKjkeTW7knieZNQh4uuu-JSz1eZYz4FeJoqKZy1Nm5aXosSaO4xjVP3jI8Y5pbMRFX8mwJgU","Scope":"openid profile","Error":null,"ErrorDescription":null,"$type":"AuthorizeResponseLog"}
+2020-04-18 22:03:03.635 -03:00 [DBG] Augmenting SignInContext
+2020-04-18 22:03:03.636 -03:00 [INF] AuthenticationScheme: idsrv signed in.
+2020-04-18 22:39:43.412 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2020-04-18 22:39:44.734 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2020-04-18 22:39:44.742 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2020-04-18 22:39:45.621 -03:00 [DBG] Start discovery request
+2020-04-18 22:39:47.260 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2020-04-18 22:39:47.269 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2020-04-18 22:39:47.274 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2020-04-18 22:39:47.288 -03:00 [DBG] Start key discovery request
+2020-04-18 22:39:48.318 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2020-04-18 22:39:48.988 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2020-04-18 22:39:48.994 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2020-04-18 22:39:48.998 -03:00 [DBG] Start authorize request
+2020-04-18 22:39:49.136 -03:00 [DBG] User in authorize request: 1
+2020-04-18 22:39:49.137 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:39:49.145 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:39:49.196 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:39:49.242 -03:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":"http://localhost:58922/signin-oidc","AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"1","ResponseType":"id_token","ResponseMode":"form_post","GrantType":"implicit","RequestedScopes":"openid profile","State":"OpenIdConnect.AuthenticationProperties=D_uGb2q8Y80M5ta4KrY5P4lo38wXBlmZH5StDNYEnIlWujkHlOoC7mndPfc8yfWFOaLiAghdVXwfaekHjizUZSV3xp2rIRFGeraCN-rk-F19aGJAi9KU9_dQcIG3BJySG5ahuxPgyxKliKLYgsvDQB6usagONGCGs-tisweTCyGL9llopkWMN3CWOPTYhctk__XDt4M0BQOKThn7jvSEUB9bOneOXJRNcto0Gt0f3rg","UiLocales":null,"Nonce":"637228571873849240.ZDlhZDA3ODMtMGMyZi00MTNhLTg4MWUtMjhjZWU4NzBiN2MwMWFmZDQxN2ItZjBmNS00YjUwLTljYjctZTgyNjJlM2E3YjUy","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"dbc94d432ba7823c0352b4bcff33c632","Raw":{"client_id":"mvcnetfull","redirect_uri":"http://localhost:58922/signin-oidc","response_type":"id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=D_uGb2q8Y80M5ta4KrY5P4lo38wXBlmZH5StDNYEnIlWujkHlOoC7mndPfc8yfWFOaLiAghdVXwfaekHjizUZSV3xp2rIRFGeraCN-rk-F19aGJAi9KU9_dQcIG3BJySG5ahuxPgyxKliKLYgsvDQB6usagONGCGs-tisweTCyGL9llopkWMN3CWOPTYhctk__XDt4M0BQOKThn7jvSEUB9bOneOXJRNcto0Gt0f3rg","response_mode":"form_post","nonce":"637228571873849240.ZDlhZDA3ODMtMGMyZi00MTNhLTg4MWUtMjhjZWU4NzBiN2MwMWFmZDQxN2ItZjBmNS00YjUwLTljYjctZTgyNjJlM2E3YjUy","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 22:39:49.319 -03:00 [DBG] IsActive called from: AuthorizeEndpoint
+2020-04-18 22:39:49.766 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2020-04-18 22:39:49.774 -03:00 [DBG] Creating Implicit Flow response.
+2020-04-18 22:39:49.777 -03:00 [DBG] Getting claims for identity token for subject: 1 and client: mvcnetfull
+2020-04-18 22:39:49.824 -03:00 [DBG] Get profile called for subject 1 from client MVC Net Full Client with claim types ["name","family_name","given_name","middle_name","nickname","preferred_username","profile","picture","website","gender","birthdate","zoneinfo","locale","updated_at"] via ClaimsProviderIdentityToken
+2020-04-18 22:39:49.910 -03:00 [DBG] Issued claims: []
+2020-04-18 22:39:50.105 -03:00 [DBG] Authorize endpoint response
+{"SubjectId":"1","ClientId":"mvcnetfull","RedirectUri":"http://localhost:58922/signin-oidc","State":"OpenIdConnect.AuthenticationProperties=D_uGb2q8Y80M5ta4KrY5P4lo38wXBlmZH5StDNYEnIlWujkHlOoC7mndPfc8yfWFOaLiAghdVXwfaekHjizUZSV3xp2rIRFGeraCN-rk-F19aGJAi9KU9_dQcIG3BJySG5ahuxPgyxKliKLYgsvDQB6usagONGCGs-tisweTCyGL9llopkWMN3CWOPTYhctk__XDt4M0BQOKThn7jvSEUB9bOneOXJRNcto0Gt0f3rg","Scope":"openid profile","Error":null,"ErrorDescription":null,"$type":"AuthorizeResponseLog"}
+2020-04-18 22:43:58.827 -03:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2020-04-18 22:43:59.026 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2020-04-18 22:43:59.070 -03:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2020-04-18 22:43:59.071 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2020-04-18 22:43:59.090 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2020-04-18 22:43:59.090 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2020-04-18 22:43:59.091 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2020-04-18 22:43:59.091 -03:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2020-04-18 22:46:02.345 -03:00 [DBG] Login Url: /Account/Login
+2020-04-18 22:46:02.449 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-04-18 22:46:02.450 -03:00 [DBG] Logout Url: /Account/Logout
+2020-04-18 22:46:02.451 -03:00 [DBG] ConsentUrl Url: /consent
+2020-04-18 22:46:02.452 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-04-18 22:46:02.453 -03:00 [DBG] Error Url: /home/error
+2020-04-18 22:46:02.453 -03:00 [DBG] Error Id Parameter: errorId
+2020-04-18 22:46:02.741 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2020-04-18 22:46:02.758 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2020-04-18 22:46:02.758 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2020-04-18 22:46:02.763 -03:00 [DBG] Start discovery request
+2020-04-18 22:46:04.669 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2020-04-18 22:46:04.673 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2020-04-18 22:46:04.674 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2020-04-18 22:46:04.677 -03:00 [DBG] Start key discovery request
+2020-04-18 22:46:06.051 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2020-04-18 22:46:06.175 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2020-04-18 22:46:06.176 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2020-04-18 22:46:06.182 -03:00 [DBG] Start authorize request
+2020-04-18 22:46:06.251 -03:00 [DBG] User in authorize request: 1
+2020-04-18 22:46:06.264 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:46:06.308 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:46:06.384 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:46:06.457 -03:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":"http://localhost:58922/signin-oidc","AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"1","ResponseType":"id_token","ResponseMode":"form_post","GrantType":"implicit","RequestedScopes":"openid profile","State":"OpenIdConnect.AuthenticationProperties=RCx1r1g_aV5fr3a4qsjjq9KNy7bZbl7Xb1Bn1xSykmyVYln-msJQwkEpgDo3FUn2imv0VeDAjWvHRhtThUfo74mASHl_9vggmjhv2CQqP37u0Z6uMR7AEgF85Wv2rMIQH7veJV1QNZtZ98cg8o2YxVxs1zLm8ge2NmkDkWbt5GnFYhWlMDRvpDrzjRpxfsfQY4M0DTKqmiXlYSAo39_fBYZmqes_-HqBfjkgzaIUsjs","UiLocales":null,"Nonce":"637228575651848095.ZmY1ZjY4ZjItZTc3ZS00ZTIwLThlZWYtNzAwMzQ3YWNmMTE5ZmU5NmNhZjUtMTNiZC00ZThjLWFhMGYtNzY5OTZiN2EwNmY3","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"dbc94d432ba7823c0352b4bcff33c632","Raw":{"client_id":"mvcnetfull","redirect_uri":"http://localhost:58922/signin-oidc","response_type":"id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=RCx1r1g_aV5fr3a4qsjjq9KNy7bZbl7Xb1Bn1xSykmyVYln-msJQwkEpgDo3FUn2imv0VeDAjWvHRhtThUfo74mASHl_9vggmjhv2CQqP37u0Z6uMR7AEgF85Wv2rMIQH7veJV1QNZtZ98cg8o2YxVxs1zLm8ge2NmkDkWbt5GnFYhWlMDRvpDrzjRpxfsfQY4M0DTKqmiXlYSAo39_fBYZmqes_-HqBfjkgzaIUsjs","response_mode":"form_post","nonce":"637228575651848095.ZmY1ZjY4ZjItZTc3ZS00ZTIwLThlZWYtNzAwMzQ3YWNmMTE5ZmU5NmNhZjUtMTNiZC00ZThjLWFhMGYtNzY5OTZiN2EwNmY3","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 22:46:06.625 -03:00 [DBG] IsActive called from: AuthorizeEndpoint
+2020-04-18 22:46:06.638 -03:00 [DBG] user_consent grant with value: mvcnetfull|1 not found in store.
+2020-04-18 22:46:06.639 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2020-04-18 22:46:06.639 -03:00 [INF] Showing consent: User has not yet consented
+2020-04-18 22:46:08.568 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:46:08.568 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:46:08.569 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:46:08.571 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:46:31.428 -03:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-04-18 22:46:31.988 -03:00 [INF] AuthenticationScheme: idsrv signed out.
+2020-04-18 22:46:32.278 -03:00 [DBG] Request path /connect/endsession/callback matched to endpoint type Endsession
+2020-04-18 22:46:32.309 -03:00 [DBG] Endpoint enabled: Endsession, successfully created handler: IdentityServer4.Endpoints.EndSessionCallbackEndpoint
+2020-04-18 22:46:32.313 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.EndSessionCallbackEndpoint for /connect/endsession/callback
+2020-04-18 22:46:32.335 -03:00 [DBG] Processing signout callback request
+2020-04-18 22:46:32.455 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:46:32.456 -03:00 [DBG] No client front-channel logout URLs
+2020-04-18 22:46:32.456 -03:00 [DBG] No client back-channel logout URLs
+2020-04-18 22:46:32.457 -03:00 [INF] Successful signout callback.
+2020-04-18 22:46:32.457 -03:00 [DBG] No client front-channel iframe urls
+2020-04-18 22:46:32.458 -03:00 [DBG] No client back-channel iframe urls
+2020-04-18 22:47:07.419 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2020-04-18 22:47:07.421 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2020-04-18 22:47:07.422 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2020-04-18 22:47:07.424 -03:00 [DBG] Start authorize request
+2020-04-18 22:47:07.424 -03:00 [DBG] No user present in authorize request
+2020-04-18 22:47:07.425 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:47:07.426 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:47:07.427 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:47:07.429 -03:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":"http://localhost:58922/signin-oidc","AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"anonymous","ResponseType":"id_token","ResponseMode":"form_post","GrantType":"implicit","RequestedScopes":"openid profile","State":"OpenIdConnect.AuthenticationProperties=Cew5Wl1y0ckyvtfYblLTTb50wAccxjoNV0stu-hhRZuSiQwKEO8Zh-KKr_WEBDefyQ2M6XXwyEvgVRWJFeCkl8quEpbkPZjPxcAEw_c6T-_q-ngYSnDydxbUpK-K8HZIQfv38ktRv8u1gyMDM19OJ5h2mQjyKfkD0-Ylo1feTwHDOc2T5DWFHr_YyeL8RZrEXVlfC6YOuXFHxP6--jJfKaXtrfuD9li6qjVLgvr6kZc","UiLocales":null,"Nonce":"637228576273083098.YmMyOWY0MzEtNjcxMS00OWM4LThiMDAtZWY4NDFmYmJiMDE3YjRiM2Y3NjMtMTVhNi00YmQ0LWEzNDgtNjc1YmFiNWM4YTVm","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"client_id":"mvcnetfull","redirect_uri":"http://localhost:58922/signin-oidc","response_type":"id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=Cew5Wl1y0ckyvtfYblLTTb50wAccxjoNV0stu-hhRZuSiQwKEO8Zh-KKr_WEBDefyQ2M6XXwyEvgVRWJFeCkl8quEpbkPZjPxcAEw_c6T-_q-ngYSnDydxbUpK-K8HZIQfv38ktRv8u1gyMDM19OJ5h2mQjyKfkD0-Ylo1feTwHDOc2T5DWFHr_YyeL8RZrEXVlfC6YOuXFHxP6--jJfKaXtrfuD9li6qjVLgvr6kZc","response_mode":"form_post","nonce":"637228576273083098.YmMyOWY0MzEtNjcxMS00OWM4LThiMDAtZWY4NDFmYmJiMDE3YjRiM2Y3NjMtMTVhNi00YmQ0LWEzNDgtNjc1YmFiNWM4YTVm","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 22:47:07.437 -03:00 [INF] Showing login: User is not authenticated
+2020-04-18 22:47:07.479 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:47:07.480 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:47:07.480 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:47:07.482 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:47:18.148 -03:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-04-18 22:47:18.332 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:47:18.332 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:47:18.333 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:47:18.344 -03:00 [DBG] Augmenting SignInContext
+2020-04-18 22:47:18.347 -03:00 [DBG] Adding idp claim with value: local
+2020-04-18 22:47:18.347 -03:00 [DBG] Adding amr claim with value: pwd
+2020-04-18 22:47:18.578 -03:00 [INF] AuthenticationScheme: idsrv signed in.
+2020-04-18 22:47:18.581 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:47:18.966 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2020-04-18 22:47:18.968 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2020-04-18 22:47:18.969 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2020-04-18 22:47:18.981 -03:00 [DBG] Start authorize callback request
+2020-04-18 22:47:18.992 -03:00 [DBG] User in authorize request: 1
+2020-04-18 22:47:18.992 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:47:18.994 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:47:18.997 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:47:18.999 -03:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":"http://localhost:58922/signin-oidc","AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"1","ResponseType":"id_token","ResponseMode":"form_post","GrantType":"implicit","RequestedScopes":"openid profile","State":"OpenIdConnect.AuthenticationProperties=Cew5Wl1y0ckyvtfYblLTTb50wAccxjoNV0stu-hhRZuSiQwKEO8Zh-KKr_WEBDefyQ2M6XXwyEvgVRWJFeCkl8quEpbkPZjPxcAEw_c6T-_q-ngYSnDydxbUpK-K8HZIQfv38ktRv8u1gyMDM19OJ5h2mQjyKfkD0-Ylo1feTwHDOc2T5DWFHr_YyeL8RZrEXVlfC6YOuXFHxP6--jJfKaXtrfuD9li6qjVLgvr6kZc","UiLocales":null,"Nonce":"637228576273083098.YmMyOWY0MzEtNjcxMS00OWM4LThiMDAtZWY4NDFmYmJiMDE3YjRiM2Y3NjMtMTVhNi00YmQ0LWEzNDgtNjc1YmFiNWM4YTVm","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"63a383c826c5778586d15d7c156865f1","Raw":{"client_id":"mvcnetfull","redirect_uri":"http://localhost:58922/signin-oidc","response_type":"id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=Cew5Wl1y0ckyvtfYblLTTb50wAccxjoNV0stu-hhRZuSiQwKEO8Zh-KKr_WEBDefyQ2M6XXwyEvgVRWJFeCkl8quEpbkPZjPxcAEw_c6T-_q-ngYSnDydxbUpK-K8HZIQfv38ktRv8u1gyMDM19OJ5h2mQjyKfkD0-Ylo1feTwHDOc2T5DWFHr_YyeL8RZrEXVlfC6YOuXFHxP6--jJfKaXtrfuD9li6qjVLgvr6kZc","response_mode":"form_post","nonce":"637228576273083098.YmMyOWY0MzEtNjcxMS00OWM4LThiMDAtZWY4NDFmYmJiMDE3YjRiM2Y3NjMtMTVhNi00YmQ0LWEzNDgtNjc1YmFiNWM4YTVm","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 22:47:19.014 -03:00 [DBG] IsActive called from: AuthorizeEndpoint
+2020-04-18 22:47:19.014 -03:00 [DBG] user_consent grant with value: mvcnetfull|1 not found in store.
+2020-04-18 22:47:19.015 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2020-04-18 22:47:19.016 -03:00 [INF] Showing consent: User has not yet consented
+2020-04-18 22:47:19.270 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:47:19.270 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:47:19.271 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:47:19.273 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:47:22.394 -03:00 [DBG] CORS request made for path: /consent from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-04-18 22:47:22.542 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:47:22.542 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:47:22.543 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:47:22.634 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:47:22.650 -03:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2020-04-18 22:47:22.655 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2020-04-18 22:47:22.659 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2020-04-18 22:47:22.661 -03:00 [DBG] Start authorize callback request
+2020-04-18 22:47:22.664 -03:00 [DBG] User in authorize request: 1
+2020-04-18 22:47:22.665 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:47:22.670 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:47:22.675 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:47:22.677 -03:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":"http://localhost:58922/signin-oidc","AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"1","ResponseType":"id_token","ResponseMode":"form_post","GrantType":"implicit","RequestedScopes":"openid profile","State":"OpenIdConnect.AuthenticationProperties=Cew5Wl1y0ckyvtfYblLTTb50wAccxjoNV0stu-hhRZuSiQwKEO8Zh-KKr_WEBDefyQ2M6XXwyEvgVRWJFeCkl8quEpbkPZjPxcAEw_c6T-_q-ngYSnDydxbUpK-K8HZIQfv38ktRv8u1gyMDM19OJ5h2mQjyKfkD0-Ylo1feTwHDOc2T5DWFHr_YyeL8RZrEXVlfC6YOuXFHxP6--jJfKaXtrfuD9li6qjVLgvr6kZc","UiLocales":null,"Nonce":"637228576273083098.YmMyOWY0MzEtNjcxMS00OWM4LThiMDAtZWY4NDFmYmJiMDE3YjRiM2Y3NjMtMTVhNi00YmQ0LWEzNDgtNjc1YmFiNWM4YTVm","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"63a383c826c5778586d15d7c156865f1","Raw":{"client_id":"mvcnetfull","redirect_uri":"http://localhost:58922/signin-oidc","response_type":"id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=Cew5Wl1y0ckyvtfYblLTTb50wAccxjoNV0stu-hhRZuSiQwKEO8Zh-KKr_WEBDefyQ2M6XXwyEvgVRWJFeCkl8quEpbkPZjPxcAEw_c6T-_q-ngYSnDydxbUpK-K8HZIQfv38ktRv8u1gyMDM19OJ5h2mQjyKfkD0-Ylo1feTwHDOc2T5DWFHr_YyeL8RZrEXVlfC6YOuXFHxP6--jJfKaXtrfuD9li6qjVLgvr6kZc","response_mode":"form_post","nonce":"637228576273083098.YmMyOWY0MzEtNjcxMS00OWM4LThiMDAtZWY4NDFmYmJiMDE3YjRiM2Y3NjMtMTVhNi00YmQ0LWEzNDgtNjc1YmFiNWM4YTVm","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 22:47:22.690 -03:00 [DBG] IsActive called from: AuthorizeEndpoint
+2020-04-18 22:47:22.692 -03:00 [DBG] user_consent grant with value: mvcnetfull|1 not found in store.
+2020-04-18 22:47:22.695 -03:00 [DBG] Found no prior consent from consent store, consent is required
+2020-04-18 22:47:22.736 -03:00 [INF] User consented to scopes: ["openid","profile"]
+2020-04-18 22:47:22.741 -03:00 [DBG] User indicated to remember consent for scopes: ["openid","profile"]
+2020-04-18 22:47:22.745 -03:00 [DBG] Client allows remembering consent, and consent given. Updating consent store for subject: 1
+2020-04-18 22:47:22.900 -03:00 [DBG] Creating Implicit Flow response.
+2020-04-18 22:47:22.914 -03:00 [DBG] Getting claims for identity token for subject: 1 and client: mvcnetfull
+2020-04-18 22:47:22.923 -03:00 [DBG] Get profile called for subject 1 from client MVC Net Full Client with claim types ["name","family_name","given_name","middle_name","nickname","preferred_username","profile","picture","website","gender","birthdate","zoneinfo","locale","updated_at"] via ClaimsProviderIdentityToken
+2020-04-18 22:47:22.926 -03:00 [DBG] Issued claims: []
+2020-04-18 22:47:24.817 -03:00 [DBG] Authorize endpoint response
+{"SubjectId":"1","ClientId":"mvcnetfull","RedirectUri":"http://localhost:58922/signin-oidc","State":"OpenIdConnect.AuthenticationProperties=Cew5Wl1y0ckyvtfYblLTTb50wAccxjoNV0stu-hhRZuSiQwKEO8Zh-KKr_WEBDefyQ2M6XXwyEvgVRWJFeCkl8quEpbkPZjPxcAEw_c6T-_q-ngYSnDydxbUpK-K8HZIQfv38ktRv8u1gyMDM19OJ5h2mQjyKfkD0-Ylo1feTwHDOc2T5DWFHr_YyeL8RZrEXVlfC6YOuXFHxP6--jJfKaXtrfuD9li6qjVLgvr6kZc","Scope":"openid profile","Error":null,"ErrorDescription":null,"$type":"AuthorizeResponseLog"}
+2020-04-18 22:47:24.901 -03:00 [DBG] Augmenting SignInContext
+2020-04-18 22:47:24.902 -03:00 [INF] AuthenticationScheme: idsrv signed in.
+2020-04-18 22:52:35.482 -03:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2020-04-18 22:52:35.539 -03:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2020-04-18 22:52:35.557 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2020-04-18 22:52:35.569 -03:00 [DBG] Start authorize request
+2020-04-18 22:52:35.590 -03:00 [DBG] User in authorize request: 1
+2020-04-18 22:52:35.591 -03:00 [DBG] Start authorize request protocol validation
+2020-04-18 22:52:35.592 -03:00 [DBG] client configuration validation for client mvcnetfull succeeded.
+2020-04-18 22:52:35.596 -03:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2020-04-18 22:52:35.598 -03:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"mvcnetfull","ClientName":"MVC Net Full Client","RedirectUri":"http://localhost:58922/signin-oidc","AllowedRedirectUris":["http://localhost:58922/signin-oidc"],"SubjectId":"1","ResponseType":"id_token","ResponseMode":"form_post","GrantType":"implicit","RequestedScopes":"openid profile","State":"OpenIdConnect.AuthenticationProperties=_2PtPwiNBJdZ9OokPk-7BQndIT_RQXe2xAQyZqVJRUzc5shzDPwvsLX4un1fcPeyxIRt1EU6fpap7h9n1y6rCgqQXfdEgsMoaduXC1t1GcVLfN9tfqjb_8u2_XOdw62Oe8BvVuNkRPEPQzWXl3Xpy_DbeF7uUgxl3QPjiDixjGstv_USOlEqDeRRduVyBX7dveT069tvqvTR81DUPmbvbhJ94DbLBdHUqVZHEsK6MI8","UiLocales":null,"Nonce":"637228579551141359.Njg4MTM4OWYtYTdjYy00Y2RhLTk5OTItMmVkYjAwYzRiOWNlMTk2NzNjNWQtYTc5YS00OTEwLWI1OWItNDc5ZmViM2E5MzBi","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"63a383c826c5778586d15d7c156865f1","Raw":{"client_id":"mvcnetfull","redirect_uri":"http://localhost:58922/signin-oidc","response_type":"id_token","scope":"openid profile","state":"OpenIdConnect.AuthenticationProperties=_2PtPwiNBJdZ9OokPk-7BQndIT_RQXe2xAQyZqVJRUzc5shzDPwvsLX4un1fcPeyxIRt1EU6fpap7h9n1y6rCgqQXfdEgsMoaduXC1t1GcVLfN9tfqjb_8u2_XOdw62Oe8BvVuNkRPEPQzWXl3Xpy_DbeF7uUgxl3QPjiDixjGstv_USOlEqDeRRduVyBX7dveT069tvqvTR81DUPmbvbhJ94DbLBdHUqVZHEsK6MI8","response_mode":"form_post","nonce":"637228579551141359.Njg4MTM4OWYtYTdjYy00Y2RhLTk5OTItMmVkYjAwYzRiOWNlMTk2NzNjNWQtYTc5YS00OTEwLWI1OWItNDc5ZmViM2E5MzBi","x-client-SKU":"ID_NET461","x-client-ver":"5.3.0.0"},"$type":"AuthorizeRequestValidationLog"}
+2020-04-18 22:52:35.603 -03:00 [DBG] IsActive called from: AuthorizeEndpoint
+2020-04-18 22:52:35.720 -03:00 [DBG] Consent found in consent store is same as current request, consent is not required
+2020-04-18 22:52:35.724 -03:00 [DBG] Creating Implicit Flow response.
+2020-04-18 22:52:35.726 -03:00 [DBG] Getting claims for identity token for subject: 1 and client: mvcnetfull
+2020-04-18 22:52:35.733 -03:00 [DBG] Get profile called for subject 1 from client MVC Net Full Client with claim types ["name","family_name","given_name","middle_name","nickname","preferred_username","profile","picture","website","gender","birthdate","zoneinfo","locale","updated_at"] via ClaimsProviderIdentityToken
+2020-04-18 22:52:35.739 -03:00 [DBG] Issued claims: []
+2020-04-18 22:52:35.788 -03:00 [DBG] Authorize endpoint response
+{"SubjectId":"1","ClientId":"mvcnetfull","RedirectUri":"http://localhost:58922/signin-oidc","State":"OpenIdConnect.AuthenticationProperties=_2PtPwiNBJdZ9OokPk-7BQndIT_RQXe2xAQyZqVJRUzc5shzDPwvsLX4un1fcPeyxIRt1EU6fpap7h9n1y6rCgqQXfdEgsMoaduXC1t1GcVLfN9tfqjb_8u2_XOdw62Oe8BvVuNkRPEPQzWXl3Xpy_DbeF7uUgxl3QPjiDixjGstv_USOlEqDeRRduVyBX7dveT069tvqvTR81DUPmbvbhJ94DbLBdHUqVZHEsK6MI8","Scope":"openid profile","Error":null,"ErrorDescription":null,"$type":"AuthorizeResponseLog"}

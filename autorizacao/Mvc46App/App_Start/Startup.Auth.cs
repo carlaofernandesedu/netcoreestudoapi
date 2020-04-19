@@ -52,6 +52,7 @@ namespace Mvc46App
 
         }
 
+        //METODO PARA CONEXAO DE OPEN ID CONNECT MODO GRANT TYPE IMPLICIT
         private void ConfigureOAuthTokenConsumption(IAppBuilder app)
         {
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
@@ -66,10 +67,11 @@ namespace Mvc46App
 
             app.UseOpenIdConnectAuthentication(new OpenIdConnectAuthenticationOptions
             {
+                
                 ClientId = "mvcnetfull",
                 Authority = "http://localhost:5000",
-                //RedirectUri = < base address of your app as registered in IdP >,
-                //ResponseType = "id_token",
+                RedirectUri = "http://localhost:58922/signin-oidc",
+                ResponseType = "id_token",
                 //Scope = "openid email",
                 //UseTokenLifetime = false,
                 SaveTokens = true,
