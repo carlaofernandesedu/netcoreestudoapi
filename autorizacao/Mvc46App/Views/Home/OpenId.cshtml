@@ -2,6 +2,7 @@
 @using System.Security.Claims;
 
 
+
 @{
     ViewBag.Title = "Authorize OpenId";
     ClaimsPrincipal currentPrincipal = Thread.CurrentPrincipal as ClaimsPrincipal;
@@ -19,6 +20,12 @@
 
 <h2>Properties</h2>
 
-
+<dl>
+    @foreach (var prop in (IDictionary<string,string>)ViewBag.Sessao)
+    {
+        <dt>@prop.Key</dt>
+        <dd>@prop.Value</dd>
+    }
+</dl>
 
 <p>Use this area to provide additional information.</p>

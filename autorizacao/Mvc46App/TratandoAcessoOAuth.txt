@@ -38,5 +38,10 @@ Nessa configuracao para poder definir que se trata de GRANT TYPE IMPLICIT  preci
 ResponseType = "id_token",
 
 
+https://www.devmedia.com.br/asp-net-identity-autenticacao-de-usuarios-com-claims/33131
+
+https://rafaelcruz.azurewebsites.net/2016/05/13/implementando-oauth-json-web-token-no-asp-net-web-api-e-owin/
+
+https://rafaelcruz.azurewebsites.net/2019/11/15/updated-implementando-oauth-json-web-token-com-owin-no-asp-net-web-api-asp-net-identity-identity-server-v4/
 
  

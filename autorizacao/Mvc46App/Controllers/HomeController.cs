@@ -23,6 +23,8 @@ namespace Mvc46App.Controllers
         [Authorize]
         public ActionResult OpenId()
         {
+            var infoSessao =HttpContext.GetOwinContext().Authentication.AuthenticateAsync("Cookies").Result.Properties.Dictionary;
+            ViewBag.Sessao = infoSessao;
             return View();
         }
 
