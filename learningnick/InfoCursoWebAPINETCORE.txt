@@ -1,0 +1,52 @@
+******************************************************
+AULA 01 SETUP E CONFIGURACAO DO SWAGGER
+*******************************************************
+
+       Problemas com VIsual Studio precisou ser instalado o update 
+	   Ficou com a vesao mais atual 
+	   
+	   
+	   Removido pastas Migration, Views, Models , Arquivo de Controller, wwwroot 
+	   No package.json retiramos a string de Conexao 
+	   Na classe Data mudamos para o ome DataContext 
+	   Fizemos a configuracao Abaixo 
+	   public void ConfigureServices(IServiceCollection services)
+        {
+  
+            services.AddDbContext<DataContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddEntityFrameworkStores<DataContext>();
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+               
+            }
+            else
+            {
+                
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+           
+
+            
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
+        }
