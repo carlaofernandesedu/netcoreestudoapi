@@ -50,3 +50,24 @@ AULA 01 SETUP E CONFIGURACAO DO SWAGGER
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+INSTALANDO O SWAGGER 
+dotnet add package Swashbuckle.AspNetCore --version 5.4.1
+Criou uma class de options e definiu a configuracao dentro do swagger 
+
+Startup Configure 
+ var swaggerOptions = new SwaggerOptions();
+ Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
+
+app.UseSwagger(options=> { options.RouteTemplate = swaggerOptions.JsonRoute;});
+
+            app.UseSwaggerUI(options=> {
+                options.SwaggerEndpoint(swaggerOptions.UIEndpoint,swaggerOptions.Description);
+                });
+
+Startup ConfigureServices 
+services.AddSwaggerGen(options =>
+                options.SwaggerDoc("v1", new OpenApiInfo(){Title="TweetBook API",Version="v1"})
+            );
+
+
