@@ -15,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TweetBook.Options;
 using Microsoft.OpenApi.Models;
+using TweetBook.IInstalers;
 
 namespace TweetBook
 {
@@ -30,18 +31,11 @@ namespace TweetBook
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-  
-            services.AddDbContext<DataContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddEntityFrameworkStores<DataContext>();
+            var classesImplementingIInstaler = typeof(Startup).Assembly.ExportedTypes.Where(o => 
+                typeof(IInstaller).IsAssignableFrom(o) && !o.IsInterface && !o.IsAbstract).Select(Activator.CreateInstance).Cast<IInstaller>().ToList();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            classesImplementingIInstaler.ForEach(o=> o.InstallServices(services,Configuration));
 
-            services.AddSwaggerGen(options =>
-                options.SwaggerDoc("v1", new OpenApiInfo(){Title="TweetBook API",Version="v1"})
-            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

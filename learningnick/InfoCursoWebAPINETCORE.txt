@@ -71,3 +71,28 @@ services.AddSwaggerGen(options =>
             );
 
 
+******************************************************
+AULA 02 CONCEITO DE VERSIONAMENTO CRIAR PASTAS 
+*******************************************************
+Criado pasta Contracts -> V1 ->  APiRoute
+Criado pasta Controllers -> v1 -> Dentro dos metodos fazer referencia as constantes da classe route
+
+
+******************************************************
+AULA 03 MELHORIA NO PROCESSO DE CONFIGURAR OS SERVICOS 
+*******************************************************
+NAO ENTENDO AINDA QUANDO TEM NO STARTUP DOIS METODOS 
+// This method gets called by the runtime. Use this method to add services to the container.
+ConfigureServices
+Esse Metodo define a sequencia de processamento do pipeline http 
+Configure(IApplicationBuilder app, IHostingEnvironment env)
+
+Criado interface IInstaller e dividiu os metodos para implementaco do mesmo  
+
+Criado por reflection descobrir as classes e instacialas 
+var classesImplementingIInstaler = typeof(Startup).Assembly.ExportedTypes.Where(o => 
+typeof(IInstaller).IsAssignableFrom(o) && !o.IsInterface && !o.IsAbstract).Select(Activator.CreateInstance).Cast<IInstaller>().ToList();
+
+
+
+
