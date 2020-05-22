@@ -25,7 +25,7 @@ namespace TweetBook.Controllers.V1
         }
 
         [HttpGet(ApiRoutes.Posts.Get)]
-        public IActionResult Get( Guid Id)
+        public IActionResult Get([FromRoute] Guid Id)
         {
             var post = _service.GetPostById(Id);    
 
@@ -38,27 +38,37 @@ namespace TweetBook.Controllers.V1
         [HttpPost(ApiRoutes.Posts.Create)]
         public IActionResult Create([FromBody] CreatePostRequest post)
         {
-            string newId = string.Empty;
 
            if (string.IsNullOrEmpty(post.Id))
-           {
-                newId = Guid.NewGuid().ToString();
-                post.Id = newId;
-           }
+                post.Id = Guid.NewGuid().ToString();
+  
           _service.GetAllPosts().Add(new Post() {Id = Guid.Parse(post.Id), Name = post.Name});
 
-          return Created(GetUriLocationNewItem(newId),new PostResponse(){Id = post.Id});
+          return Created(GetUriLocationNewItem(post.Id),new PostResponse(){Id = post.Id});
 
         }
 
-        public IActionResult Update()
+        [HttpPut(ApiRoutes.Posts.Update)]
+        public IActionResult Update([FromRoute] Guid Id, [FromBody] UpdatePostRequest post)
         {
-            throw new NotImplementedException();
+            var entity = new Post();
+            entity.Id = Id;
+            entity.Name = post.Name;
+            
+            if (_service.UpdatePost(entity))
+                return Ok();
+
+            return NotFound();
+
         }
 
-        public IActionResult Delete()
+        [HttpDelete(ApiRoutes.Posts.Delete)]
+        public IActionResult Delete([FromRoute] Guid Id)
         {
-            throw new NotImplementedException();
+            if (_service.DeletePost(Id))
+                return NoContent();
+
+            return NotFound();
         }
 
         private string GetUriLocationNewItem(string id)

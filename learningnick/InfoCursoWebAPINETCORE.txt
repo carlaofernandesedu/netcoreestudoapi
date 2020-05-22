@@ -105,3 +105,38 @@ Uso de location na devolutiva do JSON
         }
   return Created(GetUriLocationNewItem(newId),new PostResponse(){Id = post.Id});
 
+******************************************************
+AULA 05 OPERACAO GET
+*******************************************************
+Uso de Conceito de Servicos e Como instanciar o servico dentro do ASP.NET CORE 
+Dentro do ConfigureServices ou MvcInstaller 
+services.AddSingleton<IPostService,PostService>();
+
+*********************************************************
+AULA 06 UPDATE E DELETE
+************************************************************
+definicoes de route e montagem de parametros na controller 
+
+Uso de NoContent ao Excluir registros 
+[HttpPut(ApiRoutes.Posts.Update)]
+        public IActionResult Update([FromRoute] Guid Id, [FromBody] UpdatePostRequest post)
+        {
+            var entity = new Post();
+            entity.Id = Id;
+            entity.Name = post.Name;
+            
+            if (_service.UpdatePost(entity))
+                return Ok();
+
+            return NotFound();
+
+        }
+
+        [HttpDelete(ApiRoutes.Posts.Delete)]
+        public IActionResult Delete([FromRoute] Guid Id)
+        {
+            if (_service.DeletePost(Id))
+                return NoContent();
+
+            return NotFound();
+        }

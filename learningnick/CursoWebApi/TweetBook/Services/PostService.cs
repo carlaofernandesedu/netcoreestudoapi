@@ -13,6 +13,18 @@ namespace TweetBook.Services
         {
             Seed();
         }
+
+        public bool DeletePost(Guid Id)
+        {
+           if (GetPostById(Id)!=null)
+           {
+             _posts.RemoveAt( _posts.FindIndex(x=> x.Id == Id));
+             return true;
+           }
+
+           return false;
+        }
+
         public List<Post> GetAllPosts()
         {
             return _posts;
@@ -21,6 +33,17 @@ namespace TweetBook.Services
         public Post GetPostById(Guid Id)
         {
             return _posts.SingleOrDefault(x=> x.Id == Id);
+        }
+
+        public bool UpdatePost(Post post)
+        {
+           if (GetPostById(post.Id)!=null)
+           {
+            _posts[ _posts.FindIndex(x=> x.Id == post.Id)] = post;
+            return true;
+           }
+
+           return false;
         }
 
         private void Seed()
