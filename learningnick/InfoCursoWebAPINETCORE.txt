@@ -94,5 +94,14 @@ var classesImplementingIInstaler = typeof(Startup).Assembly.ExportedTypes.Where(
 typeof(IInstaller).IsAssignableFrom(o) && !o.IsInterface && !o.IsAbstract).Select(Activator.CreateInstance).Cast<IInstaller>().ToList();
 
 
-
+******************************************************
+AULA 04 OPERACAO POST
+*******************************************************
+Uso de location na devolutiva do JSON
+ private string GetUriLocationNewItem(string id)
+        {
+           var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
+           return baseUrl + ApiRoutes.Posts.Get.Replace("{Id}",id);    
+        }
+  return Created(GetUriLocationNewItem(newId),new PostResponse(){Id = post.Id});
 
