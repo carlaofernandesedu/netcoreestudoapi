@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TweetBook.Contracts.V1;
 using TweetBook.Contracts.V1.Requests;
@@ -19,15 +20,15 @@ namespace TweetBook.Controllers.V1
        }
 
         [HttpGet(ApiRoutes.Posts.GetAll)]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
-            return Ok(_service.GetAllPosts());    
+            return Ok(await _service.GetAllPostsAsync());    
         }
 
         [HttpGet(ApiRoutes.Posts.Get)]
-        public IActionResult Get([FromRoute] Guid Id)
+        public async Task<IActionResult> GetAsync([FromRoute] Guid Id)
         {
-            var post = _service.GetPostById(Id);    
+            var post = await _service.GetPostByIdAsync(Id);    
 
             if(post != null) 
               return Ok(post);
@@ -36,26 +37,24 @@ namespace TweetBook.Controllers.V1
         }
 
         [HttpPost(ApiRoutes.Posts.Create)]
-        public IActionResult Create([FromBody] CreatePostRequest post)
+        public async Task<IActionResult> CreateAsync([FromBody] CreatePostRequest post)
         {
 
-           if (string.IsNullOrEmpty(post.Id))
-                post.Id = Guid.NewGuid().ToString();
-  
-          _service.GetAllPosts().Add(new Post() {Id = Guid.Parse(post.Id), Name = post.Name});
+          var entidade = new Post() { Name = post.Name};
+          await _service.CreatePostAsync(entidade);
 
-          return Created(GetUriLocationNewItem(post.Id),new PostResponse(){Id = post.Id});
+          return Created(GetUriLocationNewItem(entidade.Id.ToString()),new PostResponse(){Id = post.Id});
 
         }
 
         [HttpPut(ApiRoutes.Posts.Update)]
-        public IActionResult Update([FromRoute] Guid Id, [FromBody] UpdatePostRequest post)
+        public async Task<IActionResult> UpdateAsync([FromRoute] Guid Id, [FromBody] UpdatePostRequest post)
         {
             var entity = new Post();
             entity.Id = Id;
             entity.Name = post.Name;
             
-            if (_service.UpdatePost(entity))
+            if (await _service.UpdatePostAsync(entity))
                 return Ok();
 
             return NotFound();
@@ -63,9 +62,9 @@ namespace TweetBook.Controllers.V1
         }
 
         [HttpDelete(ApiRoutes.Posts.Delete)]
-        public IActionResult Delete([FromRoute] Guid Id)
+        public async Task<IActionResult> Delete([FromRoute] Guid Id)
         {
-            if (_service.DeletePost(Id))
+            if (await _service.DeletePostAsync(Id))
                 return NoContent();
 
             return NotFound();

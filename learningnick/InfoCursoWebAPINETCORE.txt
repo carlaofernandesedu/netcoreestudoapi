@@ -113,7 +113,7 @@ Dentro do ConfigureServices ou MvcInstaller
 services.AddSingleton<IPostService,PostService>();
 
 *********************************************************
-AULA 06 UPDATE E DELETE
+AULA 05 e  06 UPDATE E DELETE
 ************************************************************
 definicoes de route e montagem de parametros na controller 
 
@@ -140,3 +140,17 @@ Uso de NoContent ao Excluir registros
 
             return NotFound();
         }
+
+
+*********************************************************
+AULA 07 ENTITY FRAMEWORK - 
+************************************************************
+
+AULA DE ENTITY FRAMEWORK
+PARA RODAR COM ASP.NET 2.2.0 TER QUER SER ESPECIFICA
+USO DO SQL LITE
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 2.2.6
+
+PARA RODAR O MIGRATION 
+dotnet ef migrations add "Create Posts"
+

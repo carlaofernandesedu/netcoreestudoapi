@@ -10,9 +10,9 @@ namespace TweetBook.IInstalers
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
+           var connection = configuration["ConnectionDB:SqliteConnectionString"]; 
            services.AddDbContext<DataContext>(options =>
-                options.UseSqlServer(
-                    configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlite(connection));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<DataContext>();
    

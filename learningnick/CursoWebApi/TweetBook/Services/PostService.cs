@@ -2,59 +2,53 @@ using System;
 using System.Collections.Generic;
 using TweetBook.Domain;
 using System.Linq;
+using TweetBook.Data;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace TweetBook.Services
 {
     public class PostService : IPostService
     {
-        private List<Post> _posts;
+        private readonly DataContext _repository;
 
-        public PostService()
+        public PostService(DataContext repository)
         {
-            Seed();
+            _repository = repository;
         }
 
-        public bool DeletePost(Guid Id)
+        public async Task<bool> CreatePostAsync(Post post)
         {
-           if (GetPostById(Id)!=null)
-           {
-             _posts.RemoveAt( _posts.FindIndex(x=> x.Id == Id));
-             return true;
-           }
-
-           return false;
+            await _repository.Posts.AddAsync(post);
+            var result = await _repository.SaveChangesAsync();
+            return result > 0;
         }
 
-        public List<Post> GetAllPosts()
+        public async Task<bool> DeletePostAsync(Guid Id)
         {
-            return _posts;
+            var post = await GetPostByIdAsync(Id);
+            _repository.Posts.Remove(post);
+            var result = await _repository.SaveChangesAsync();
+            return result > 0;
         }
 
-        public Post GetPostById(Guid Id)
+        public async Task<List<Post>> GetAllPostsAsync()
         {
-            return _posts.SingleOrDefault(x=> x.Id == Id);
+            return await _repository.Posts.ToListAsync();
         }
 
-        public bool UpdatePost(Post post)
+        public async Task<Post> GetPostByIdAsync(Guid Id)
         {
-           if (GetPostById(post.Id)!=null)
-           {
-            _posts[ _posts.FindIndex(x=> x.Id == post.Id)] = post;
-            return true;
-           }
-
-           return false;
+            return await _repository.Posts.SingleOrDefaultAsync(x=> x.Id == Id);
         }
 
-        private void Seed()
+        public async Task<bool> UpdatePostAsync(Post post)
         {
-            _posts = new List<Post>();
-            
-            for(int i =0; i < 3; i++)
-            {
-                var newGuid = System.Guid.NewGuid().ToString();
-                _posts.Add(new Post(){Id = Guid.Parse(newGuid), Name = $"Post Name:{i}"});
-            }
+            _repository.Posts.Update(post);
+            var result = await _repository.SaveChangesAsync();
+            return result > 0;
         }
+
+        
     }
 }
