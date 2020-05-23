@@ -43,7 +43,8 @@ namespace TweetBook.Controllers.V1
           var entidade = new Post() { Name = post.Name};
           await _service.CreatePostAsync(entidade);
 
-          return Created(GetUriLocationNewItem(entidade.Id.ToString()),new PostResponse(){Id = post.Id});
+          var retorno = new PostResponse(){Id = entidade.Id.ToString()};
+          return Created(GetUriLocationNewItem(entidade.Id.ToString()),retorno);
 
         }
 
