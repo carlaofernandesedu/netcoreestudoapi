@@ -411,4 +411,71 @@ app.UseHttpsRedirection();
 -Colocar caracteristica que comecara a autenticar            
             app.UseAuthentication();
 
+************************************************************
+AULA 10 PROCEDIMENTOS REGISTRER IDENTITY E CRIACAO DE TOKEN 
+************************************************************
+ public async Task<IActionResult> Register([FromBody] UserRegistrationRequest request)
+        {
+            var authResponse = await _service.RegisterAsync(request.Email,request.Password);
+            
+            if (!authResponse.Success)
+            return BadRequest(new AuthFailedResponse{Errors = authResponse.Errors});
+
+            return Ok(new AuthSuccessResponse{ Token= authResponse.Token});
+        }
+
+ public async Task<AuthenticationResult> RegisterAsync(string email, string password)
+        {
+            var result = new AuthenticationResult();
+            
+            var userExists =  await _userManager.FindByEmailAsync(email);
+            
+            if (userExists!= null)
+            {
+               result.Errors = new List<string>() { "Usuário já existe" };     
+               return result;
+            }
+            
+            var newUser =  new IdentityUser()
+            {
+                UserName =email, 
+                Email = email
+            };
+
+            var resultnewUser = await _userManager.CreateAsync(newUser, password);
+
+            if (!resultnewUser.Succeeded)
+            {
+                result.Errors = resultnewUser.Errors.Select(x=> x.Description).ToList();
+                return result;
+            }
+            result.Token = GenerateToken(newUser);
+            result.Success = resultnewUser.Succeeded;
+            return result;
+        }
+
+----------GERACAO DE TOJEN JWT 
+private string GenerateToken(IdentityUser user)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor()
+            {
+                Subject = new ClaimsIdentity( new[]
+                    {
+                      new Claim(JwtRegisteredClaimNames.Sub,user.Email),
+                      new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),      
+                      new Claim(JwtRegisteredClaimNames.Email,user.Email),
+                      new Claim("id",user.Id)                        
+                    }
+                ),
+                Expires = DateTime.UtcNow.AddHours(6),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha256Signature)
+            }; 
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+            
+        }
+
+
 

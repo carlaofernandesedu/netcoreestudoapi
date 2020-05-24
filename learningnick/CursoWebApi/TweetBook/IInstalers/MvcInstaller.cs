@@ -67,6 +67,7 @@ namespace TweetBook.IInstalers
                 });
             });
 
+            services.AddScoped<IIdentityService,IdentityService>();
             services.AddScoped<IPostService,PostService>();
         
         }

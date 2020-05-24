@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TweetBook.Contracts.V1;
 using TweetBook.Contracts.V1.Requests;
@@ -10,10 +11,12 @@ using TweetBook.Services;
 
 namespace TweetBook.Controllers.V1
 {
+    [Authorize] 
     public class PostsController : Controller
     {
         private readonly IPostService _service;
 
+       
        public PostsController(IPostService service)
        {
            _service = service;
