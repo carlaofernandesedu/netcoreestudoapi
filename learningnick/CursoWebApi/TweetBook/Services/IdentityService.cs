@@ -22,6 +22,33 @@ namespace TweetBook.Services
             _userManager = userManager;
             _jwtOptions = jwtOptions;
         }
+
+        public  async Task<AuthenticationResult>  LoginAsync(string email, string password)
+        {
+            var result = new AuthenticationResult();
+
+             var userExists =  await _userManager.FindByEmailAsync(email);
+            
+            if (userExists== null)
+            {
+               result.Errors = new List<string>() { "Usuário não existe" };     
+               return result;
+            }
+
+            var resultLogin = await _userManager.CheckPasswordAsync(userExists, password);
+
+            if (!resultLogin)
+            {
+               result.Errors = new List<string>() { "Password incorreto" };     
+               return result;
+            }
+            result.Token = GenerateToken(userExists);
+            result.Success = resultLogin;
+            return result;
+
+
+        }
+
         public async Task<AuthenticationResult> RegisterAsync(string email, string password)
         {
             var result = new AuthenticationResult();

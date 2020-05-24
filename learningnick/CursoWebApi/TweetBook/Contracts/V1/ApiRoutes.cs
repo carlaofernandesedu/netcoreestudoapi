@@ -19,6 +19,7 @@ namespace TweetBook.Contracts.V1
         public static class Identity
        {
            public const string Register = Base + "/Register";
+           public const string Login = Base + "/Login";
        }
 
       
