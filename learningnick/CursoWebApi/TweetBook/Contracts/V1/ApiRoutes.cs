@@ -15,5 +15,12 @@ namespace TweetBook.Contracts.V1
             public const  string Create = Base + "/Posts";
 
        }
+
+        public static class Identity
+       {
+           public const string Register = Base + "/Register";
+       }
+
+      
     }
 }

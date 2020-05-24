@@ -142,7 +142,7 @@ Uso de NoContent ao Excluir registros
         }
 
 
-*********************************************************
+************************************************************
 AULA 07 ENTITY FRAMEWORK - 
 ************************************************************
 
@@ -332,11 +332,83 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
 Done.
 $ 
 
+************************************************************
+AULA 09 CONFIGURACAO DE AUTENTICACAO DO JWT SETTINGS E SWAGGER 
+************************************************************
 
 OCORREU A CONFIGURACO DO JWT SETTINGS 
+No app Settings 
+"JwtSettingsOptions":
+  {
+    "Secret":"12345678901234567890123456789012"
+  },
+
+public class JwtSettingsOptions
+    {
+        public string Secret { get; set; }
+    }
+
+var jwtOptions = new JwtSettingsOptions();
+            configuration.GetSection(nameof(JwtSettingsOptions)).Bind(jwtOptions);
+            services.AddSingleton(jwtOptions);
+
+            var tokenParameters = new TokenValidationParameters()
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.ASCII.GetBytes(jwtOptions.Secret)),
+                ValidateIssuer = false,
+                ValidateAudience =false,
+                RequireExpirationTime = false,
+                ValidateLifetime = true
+
+            };
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.SaveToken = true;
+                x.TokenValidationParameters = tokenParameters;
+            });
+
 
 OCORREU A CONFIGURACAO DO SWAGGER PARA USAR A AUTORIZATION 
+https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/1425
 
-OCORREU A CONFIGURACAO DO 
+services.AddSwaggerGen(x =>
+            {
+                x.SwaggerDoc("v1", new OpenApiInfo(){Title="TweetBook API",Version="v1"});
+                x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "JWT Authorization header using the Bearer Schema",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header ,
+                    Type = SecuritySchemeType.ApiKey
+                });
+                x.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        }, new List<string>()
+                    }
+                });
+            });
+
+
+OCORREU A CONFIGURACAO DO USE AUTENTICATION
+
+app.UseHttpsRedirection();
+            app.UseStaticFiles();
+-Colocar caracteristica que comecara a autenticar            
+            app.UseAuthentication();
 
 
