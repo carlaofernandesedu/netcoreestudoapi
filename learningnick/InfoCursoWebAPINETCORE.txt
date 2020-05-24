@@ -478,4 +478,12 @@ private string GenerateToken(IdentityUser user)
         }
 
 
-
+*********************************************************************
+Tratativas para rodar o SQL LITE no linux 
+**********************************************************************
+Instalando a extensao no VSCODE 
+Tive que fazer a instalacao do sqllite3 
+sudo apt install sqlite
+ 
+tiver que verificar esse site https://www.sqlite.org/download.html
+tive que verificar essa extensao https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite
