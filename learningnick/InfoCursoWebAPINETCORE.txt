@@ -540,4 +540,20 @@ Na controller que utiliza
         }
 
 
+*********************************************************************
+AULA 12 OBTER DADOS DAS CLAIMS DO TOKEN RECEBIDO PODENDO AVALIAR SE O MESMO USUARIO QUE OBTEM A INFORMACAO
+**********************************************************************
 
+public static class GeneralExtensions
+    {
+        public static string GetUserId(this HttpContext httpContext)
+        {
+            return httpContext.User == null ? string.Empty : httpContext.User.Claims.Single(x=> x.Type == "id").Value;
+        }
+    }
+
+ public IActionResult Get()
+        {
+            var userid = HttpContext.GetUserId();
+            return Ok(new { descricao = "retornando autenticado para o usuario:" + userid });
+        }

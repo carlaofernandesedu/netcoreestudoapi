@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TweetBook.Contracts.V1;
+using TweetBook.Extensions;
 
 namespace TweetBook.Controllers.V1
 {
@@ -12,13 +13,14 @@ namespace TweetBook.Controllers.V1
         [Authorize("PolicyClaimViewer")]
         public IActionResult GetbyPolicy()
         {
-            return Ok(new { descricao = "retornando por autorizacao de claim" });
+            return Ok(new { descricao = "retornando autenticado e  autorizado por claim" });
         }
 
         [HttpGet(ApiRoutes.PolicyClaim.Get)]
         public IActionResult Get()
         {
-            return Ok(new { descricao = "retornando sem autorizacao" });
+            var userid = HttpContext.GetUserId();
+            return Ok(new { descricao = "retornando autenticado para o usuario:" + userid });
         }
 
     }
