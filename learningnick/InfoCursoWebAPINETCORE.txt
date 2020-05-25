@@ -487,3 +487,57 @@ sudo apt install sqlite
  
 tiver que verificar esse site https://www.sqlite.org/download.html
 tive que verificar essa extensao https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite
+
+
+*********************************************************************
+AULA 17 AUTORIZACAO POR CLAIMS 
+**********************************************************************
+
+Start UP
+services.AddAuthorization(options=>
+            {
+                options.AddPolicy("PolicyClaimViewer",builder =>{
+                    builder.RequireClaim("policiesclaim.view","true");
+                });
+            });
+
+
+No metodo que salva e retorna as claims 
+private async Task<IList<Claim>> GenerateClaimsUsers(IdentityUser user)
+        {
+            IList<Claim> result = null;
+            if (user.Email.Contains("claim"))
+            {
+                 await _userManager.AddClaimAsync(user,new Claim("policiesclaim.view","true"));
+                 result = await _userManager.GetClaimsAsync(user);
+            }
+            return result;
+        }
+
+No JWT que precisar ter essa informacao
+private string GenerateToken(IdentityUser user, IList<Claim> userClaims)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
+            List<Claim> claims = new List<Claim>()
+            {
+                      new Claim(JwtRegisteredClaimNames.Sub,user.Email),
+                      new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),      
+                      new Claim(JwtRegisteredClaimNames.Email,user.Email),
+                      new Claim("id",user.Id)                        
+            };
+            
+            if (userClaims!=null)
+                claims.AddRange(userClaims);
+
+
+Na controller que utiliza
+[HttpGet(ApiRoutes.PolicyClaim.GetByPolicy)]
+        [Authorize("PolicyClaimViewer")]
+        public IActionResult GetbyPolicy()
+        {
+            return Ok(new { descricao = "retornando por autorizacao de claim" });
+        }
+
+
+

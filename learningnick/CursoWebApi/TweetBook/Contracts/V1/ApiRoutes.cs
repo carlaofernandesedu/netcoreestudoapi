@@ -22,6 +22,11 @@ namespace TweetBook.Contracts.V1
            public const string Login = Base + "/Login";
        }
 
-      
+       public static class PolicyClaim 
+       {
+           public const string Get = Base + "/PolicyClaim/Get";
+
+           public const string GetByPolicy = Base + "/PolicyClaim/GetbyPolicy";
+       }
     }
 }

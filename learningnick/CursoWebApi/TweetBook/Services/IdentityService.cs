@@ -42,7 +42,8 @@ namespace TweetBook.Services
                result.Errors = new List<string>() { "Password incorreto" };     
                return result;
             }
-            result.Token = GenerateToken(userExists);
+            var userClaims = await _userManager.GetClaimsAsync(userExists);
+            result.Token = GenerateToken(userExists,userClaims);
             result.Success = resultLogin;
             return result;
 
@@ -74,31 +75,48 @@ namespace TweetBook.Services
                 result.Errors = resultnewUser.Errors.Select(x=> x.Description).ToList();
                 return result;
             }
-            result.Token = GenerateToken(newUser);
+
+            var userClaims = await GenerateClaimsUsers(newUser);
+            result.Token = GenerateToken(newUser, userClaims);
             result.Success = resultnewUser.Succeeded;
             return result;
         }
 
-        private string GenerateToken(IdentityUser user)
+        private string GenerateToken(IdentityUser user, IList<Claim> userClaims)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
-            var tokenDescriptor = new SecurityTokenDescriptor()
+            List<Claim> claims = new List<Claim>()
             {
-                Subject = new ClaimsIdentity( new[]
-                    {
                       new Claim(JwtRegisteredClaimNames.Sub,user.Email),
                       new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),      
                       new Claim(JwtRegisteredClaimNames.Email,user.Email),
                       new Claim("id",user.Id)                        
-                    }
-                ),
+            };
+            
+            if (userClaims!=null)
+                claims.AddRange(userClaims);
+
+            var tokenDescriptor = new SecurityTokenDescriptor()
+            {
+                Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddHours(6),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha256Signature)
             }; 
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
             
+        }
+
+        private async Task<IList<Claim>> GenerateClaimsUsers(IdentityUser user)
+        {
+            IList<Claim> result = null;
+            if (user.Email.Contains("claim"))
+            {
+                 await _userManager.AddClaimAsync(user,new Claim("policiesclaim.view","true"));
+                 result = await _userManager.GetClaimsAsync(user);
+            }
+            return result;
         }
     }
 }
