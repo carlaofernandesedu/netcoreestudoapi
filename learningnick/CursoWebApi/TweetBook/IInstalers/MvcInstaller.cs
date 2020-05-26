@@ -20,6 +20,8 @@ namespace TweetBook.IInstalers
             configuration.GetSection(nameof(JwtSettingsOptions)).Bind(jwtOptions);
             services.AddSingleton(jwtOptions);
 
+          
+
             var tokenParameters = new TokenValidationParameters()
             {
                 ValidateIssuerSigningKey = true,
