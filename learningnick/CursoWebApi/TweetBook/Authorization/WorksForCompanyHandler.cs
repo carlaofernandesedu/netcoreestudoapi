@@ -13,12 +13,12 @@ namespace TweetBook.Authorization
             if (emailAddress.EndsWith(requirement.DomainName))
             {
                 context.Succeed(requirement);
+                return Task.CompletedTask;
             }
-            else 
-            {
-                context.Fail();
-            }
+            
+            context.Fail();
             return Task.CompletedTask;
+            
 
         }
     }

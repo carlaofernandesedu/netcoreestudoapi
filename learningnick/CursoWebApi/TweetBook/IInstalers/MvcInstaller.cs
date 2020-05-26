@@ -44,12 +44,12 @@ namespace TweetBook.IInstalers
                 x.TokenValidationParameters = tokenParameters;
             });
 
-            services.AddAuthorization(options=>
-            {
-                options.AddPolicy("PolicyClaimViewer",builder =>{
-                    builder.RequireClaim("policiesclaim.view","true");
-                });
-            });
+            // services.AddAuthorization(options=>
+            // {
+            //     options.AddPolicy("PolicyClaimViewer",builder =>{
+            //         builder.RequireClaim("policiesclaim.view","true");
+            //     });
+            // });
 
             services.AddSwaggerGen(x =>
             {

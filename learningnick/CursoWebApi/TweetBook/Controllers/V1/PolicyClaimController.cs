@@ -10,10 +10,11 @@ namespace TweetBook.Controllers.V1
     {
         
         [HttpGet(ApiRoutes.PolicyClaim.GetByPolicy)]
-        [Authorize("PolicyClaimViewer")]
+        //[Authorize("PolicyClaimViewer")]  // Tratativa autorizado por claim
+        [Authorize("PolicyCustomViewer")] // Tratativa autorizador customizado
         public IActionResult GetbyPolicy()
         {
-            return Ok(new { descricao = "retornando autenticado e  autorizado por claim" });
+            return Ok(new { descricao = "retornando autenticado e  autorizado por policy" });
         }
 
         [HttpGet(ApiRoutes.PolicyClaim.Get)]

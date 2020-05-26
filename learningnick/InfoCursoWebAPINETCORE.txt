@@ -557,3 +557,48 @@ public static class GeneralExtensions
             var userid = HttpContext.GetUserId();
             return Ok(new { descricao = "retornando autenticado para o usuario:" + userid });
         }
+
+*********************************************************************
+AULA 19 - AUTORIZADOR CUSTOMIZADO 
+**********************************************************************
+configuracao do pipeline
+services.AddAuthorization(options=>
+              {
+                options.AddPolicy("PolicyCustomViewer",builder =>{
+                    builder.AddRequirements(new WorksForCompanyRequirement("xpto.com"));
+                });
+              });
+
+              services.AddSingleton<IAuthorizationHandler,WorksForCompanyHandler>();
+
+CLASSE DE NEGOCIO
+ public class WorksForCompanyRequirement : IAuthorizationRequirement
+    {
+
+        public string DomainName { get; }
+        public WorksForCompanyRequirement(string domainName)
+        {
+            DomainName = domainName;
+        }
+
+    }
+
+CLASSE TRATADORA 
+public class WorksForCompanyHandler : AuthorizationHandler<WorksForCompanyRequirement>
+    {
+        protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, WorksForCompanyRequirement requirement)
+        {
+            var emailAddress = context.User?.FindFirstValue(ClaimTypes.Email) ?? string.Empty;
+
+            if (emailAddress.EndsWith(requirement.DomainName))
+            {
+                context.Succeed(requirement);
+                return Task.CompletedTask;
+            }
+            
+            context.Fail();
+            return Task.CompletedTask;
+            
+
+        }
+    }

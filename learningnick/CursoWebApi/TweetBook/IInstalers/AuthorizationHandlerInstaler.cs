@@ -12,7 +12,7 @@ namespace TweetBook.IInstalers
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
              var authOptions = new AuthorizationModelOptions();
-             configuration.GetSection(nameof(AuthorizationOptions)).Bind(authOptions);
+             configuration.GetSection(nameof(AuthorizationModelOptions)).Bind(authOptions);
             
 
             if (authOptions.Model == "claims")
@@ -33,6 +33,8 @@ namespace TweetBook.IInstalers
                     builder.AddRequirements(new WorksForCompanyRequirement("xpto.com"));
                 });
               });
+
+              services.AddSingleton<IAuthorizationHandler,WorksForCompanyHandler>();
             }
 
         }
