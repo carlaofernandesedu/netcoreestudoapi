@@ -11,7 +11,7 @@ namespace TweetBook.Controllers.V1
         
         [HttpGet(ApiRoutes.PolicyClaim.GetByPolicy)]
         //[Authorize("PolicyClaimViewer")]  // Tratativa autorizado por claim
-        [Authorize("PolicyCustomViewer")] // Tratativa autorizador customizado
+        //[Authorize("PolicyCustomViewer")] // Tratativa autorizador customizado user@xpto.com
         public IActionResult GetbyPolicy()
         {
             return Ok(new { descricao = "retornando autenticado e  autorizado por policy" });
@@ -22,6 +22,13 @@ namespace TweetBook.Controllers.V1
         {
             var userid = HttpContext.GetUserId();
             return Ok(new { descricao = "retornando autenticado para o usuario:" + userid });
+        }
+
+        [HttpGet(ApiRoutes.PolicyClaim.GetByRoles)]
+        [Authorize("PolicyRolesViewer")] //Tratativa autorizador por ROLES user@xpto.com
+        public IActionResult GetByRoles()
+        {
+            return Ok(new { descricao = "retornando autenticado e  autorizado por roles" });
         }
 
     }

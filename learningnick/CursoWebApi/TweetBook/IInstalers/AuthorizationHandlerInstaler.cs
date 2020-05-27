@@ -36,7 +36,14 @@ namespace TweetBook.IInstalers
 
               services.AddSingleton<IAuthorizationHandler,WorksForCompanyHandler>();
             }
-
+            else if (authOptions.Model == "roles")
+            {
+              services.AddAuthorization(options =>
+                {
+                    options.AddPolicy("PolicyRolesViewer",
+                      policy => policy.RequireRole("User"));
+                });
+            }
         }
     }
 }

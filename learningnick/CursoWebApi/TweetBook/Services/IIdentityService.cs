@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TweetBook.Domain;
 
@@ -7,5 +8,6 @@ namespace TweetBook.Services
     {
         Task<AuthenticationResult> RegisterAsync(string email, string password);
         Task<AuthenticationResult> LoginAsync(string email, string password);
+        Task<IEnumerable<string>> CreateRoles();
     }
 }

@@ -602,3 +602,66 @@ public class WorksForCompanyHandler : AuthorizationHandler<WorksForCompanyRequir
 
         }
     }
+
+
+AUTORIZACAO POR ROLES 
+
+CRIACAO DA AUTORIZACAO
+
+Na parte de configure Services 
+  services.AddAuthorization(options =>
+                {
+                    options.AddPolicy("PolicyRolesViewer",
+                      policy => policy.RequireRole("User"));
+                });
+            }
+
+na parte de Incluir Roles e obter roles do usuario 
+public async Task<IEnumerable<string>> CreateRoles()
+        {
+            List<string> rolesName = null;
+            
+            if (!(await _roleManager.RoleExistsAsync("Admin")))
+                await _roleManager.CreateAsync(new IdentityRole(){Name="Admin"});
+            
+            if (!(await _roleManager.RoleExistsAsync("User")))
+                await _roleManager.CreateAsync(new IdentityRole(){Name="User"});
+            
+            rolesName = _roleManager.Roles.Select(x=> x.Name).ToList();
+            
+            return rolesName;
+            
+        }
+
+ var userRoles = await _userManager.GetRolesAsync(userExists);
+
+Incluir no JWT para validar a role que o usuario possui 
+private string GenerateToken(IdentityUser user, IList<Claim> userClaims, IList<string> userRoles)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
+            List<Claim> claims = new List<Claim>()
+            {
+                      new Claim(JwtRegisteredClaimNames.Sub,user.Email),
+                      new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),      
+                      new Claim(JwtRegisteredClaimNames.Email,user.Email),
+                      new Claim("id",user.Id)                        
+            };
+            
+            if (userClaims!=null)
+                claims.AddRange(userClaims);
+
+            if (userRoles!=null)                
+                claims.Add(new Claim(ClaimTypes.Role,userRoles.First()));
+
+
+            var tokenDescriptor = new SecurityTokenDescriptor()
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddHours(6),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha256Signature)
+            }; 
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+            
+        }

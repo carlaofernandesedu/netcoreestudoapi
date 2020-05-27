@@ -14,6 +14,7 @@ namespace TweetBook.IInstalers
            services.AddDbContext<DataContext>(options =>
                 options.UseSqlite(connection));
             services.AddDefaultIdentity<IdentityUser>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<DataContext>();
    
         }

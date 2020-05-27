@@ -20,6 +20,8 @@ namespace TweetBook.Contracts.V1
        {
            public const string Register = Base + "/Register";
            public const string Login = Base + "/Login";
+
+           public const string Roles = Base + "/Roles";
        }
 
        public static class PolicyClaim 
@@ -27,6 +29,8 @@ namespace TweetBook.Contracts.V1
            public const string Get = Base + "/PolicyClaim/Get";
 
            public const string GetByPolicy = Base + "/PolicyClaim/GetbyPolicy";
+
+            public const string GetByRoles = Base + "/PolicyClaim/GetbyRoles";
        }
     }
 }

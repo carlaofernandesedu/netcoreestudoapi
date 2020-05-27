@@ -38,5 +38,13 @@ namespace TweetBook.Controllers.V1
 
             return Ok(new AuthSuccessResponse{ Token= authResponse.Token});
         }
+
+    [HttpPost(template: ApiRoutes.Identity.Roles)]
+        public async Task<IActionResult> Roles()
+        {
+            var roles = await _service.CreateRoles();
+        
+            return Ok(roles);
+        }
     }
 }

@@ -17,10 +17,13 @@ namespace TweetBook.Services
         private readonly UserManager<IdentityUser>_userManager;
         private readonly JwtSettingsOptions _jwtOptions;
 
-        public IdentityService(UserManager<IdentityUser> userManager, JwtSettingsOptions jwtOptions)
+        private readonly RoleManager<IdentityRole>_roleManager;
+
+        public IdentityService(UserManager<IdentityUser> userManager, JwtSettingsOptions jwtOptions, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _jwtOptions = jwtOptions;
+            _roleManager = roleManager;
         }
 
         public  async Task<AuthenticationResult>  LoginAsync(string email, string password)
@@ -43,7 +46,8 @@ namespace TweetBook.Services
                return result;
             }
             var userClaims = await _userManager.GetClaimsAsync(userExists);
-            result.Token = GenerateToken(userExists,userClaims);
+            var userRoles = await _userManager.GetRolesAsync(userExists);
+            result.Token = GenerateToken(userExists,userClaims,userRoles);
             result.Success = resultLogin;
             return result;
 
@@ -77,12 +81,12 @@ namespace TweetBook.Services
             }
 
             var userClaims = await GenerateClaimsUsers(newUser);
-            result.Token = GenerateToken(newUser, userClaims);
+            result.Token = GenerateToken(newUser, userClaims,null);
             result.Success = resultnewUser.Succeeded;
             return result;
         }
 
-        private string GenerateToken(IdentityUser user, IList<Claim> userClaims)
+        private string GenerateToken(IdentityUser user, IList<Claim> userClaims, IList<string> userRoles)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
@@ -96,6 +100,10 @@ namespace TweetBook.Services
             
             if (userClaims!=null)
                 claims.AddRange(userClaims);
+
+            if (userRoles!=null)                
+                claims.Add(new Claim(ClaimTypes.Role,userRoles.First()));
+
 
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
@@ -117,6 +125,22 @@ namespace TweetBook.Services
                  result = await _userManager.GetClaimsAsync(user);
             }
             return result;
+        }
+
+        public async Task<IEnumerable<string>> CreateRoles()
+        {
+            List<string> rolesName = null;
+            
+            if (!(await _roleManager.RoleExistsAsync("Admin")))
+                await _roleManager.CreateAsync(new IdentityRole(){Name="Admin"});
+            
+            if (!(await _roleManager.RoleExistsAsync("User")))
+                await _roleManager.CreateAsync(new IdentityRole(){Name="User"});
+            
+            rolesName = _roleManager.Roles.Select(x=> x.Name).ToList();
+            
+            return rolesName;
+            
         }
     }
 }
